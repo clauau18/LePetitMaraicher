@@ -5,22 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { VegetableDisplayComponent } from './vegetable-display/vegetable-display.component';
 import { VegetableComponent } from './vegetable/vegetable.component';
 import { BuyingPageComponent } from './buying-page/buying-page.component';
 import { CommandResumeComponent } from './command-resume/command-resume.component';
 import { ConnexionPageComponent } from './connexion-page/connexion-page.component';
+import { BasketPageComponent } from './basket-page/basket-page.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    VegetableDisplayComponent,
     VegetableComponent,
     BuyingPageComponent,
     CommandResumeComponent,
-    ConnexionPageComponent
+    ConnexionPageComponent,
+    BasketPageComponent,
+    SignupPageComponent,
+    PaymentPageComponent
   ],
   imports: [
     BrowserModule,
