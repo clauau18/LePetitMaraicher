@@ -3,14 +3,14 @@
     <div class="description">Description</div>
    
         <form>
-            <input name="nameVegetable" type="text" [(ngModel)]="nameVegetable" placeholder="Nom de l'aliment"/>
-            <input name="priceVegetable" type="text" [(ngModel)]="priceVegetable" placeholder="Prix de l'aliment"/>
-            <button (click)=addVegetable() >Ajouter</button>
+            <input name="nameVegetable" type="text" [(ngModel)]="vegetablesService.nameVegetable" placeholder="Nom de l'aliment"/>
+            <input name="priceVegetable" type="text" [(ngModel)]="vegetablesService.priceVegetable" placeholder="Prix de l'aliment"/>
+            <button (click)=vegetablesService.addVegetable() >Ajouter</button>
         </form>
 
         
         <div class=vegetables > 
-            <div class="vegetable" *ngFor="let vegetable of vegetables">
+            <div class="vegetable" *ngFor="let vegetable of vegetablesService.vegetables">
                     <div class="name"> {{vegetable.nameVegetable}}</div>
                     <div class="price"> {{vegetable.priceVegetable}}</div>
                     <div class="quantity"> {{vegetable.quantityVegetable}}</div>
