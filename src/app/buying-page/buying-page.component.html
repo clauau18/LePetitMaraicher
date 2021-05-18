@@ -11,12 +11,13 @@
         
         <div class=vegetables > 
             <div class="vegetable" *ngFor="let vegetable of vegetablesService.vegetables">
-                    <div class="name"> {{vegetable.nameVegetable}}</div>
-                    <div class="price"> {{vegetable.priceVegetable}}</div>
-                    <div class="quantity"> {{vegetable.quantityVegetable}}</div>
+                    <div class="name"> {{vegetable.vegetableName}}</div>
+                    <div class="price"> {{vegetable.vegetablePrice}}</div>
+                    <div class="quantity"> {{vegetable.vegetableQuantity}}</div>
             </div>
         </div>
-        
+
+        <button class="edit" routerLink="/vegetable/{{vegetablesService.vegetableId}}">Edit</button>
     
 </div>
 
