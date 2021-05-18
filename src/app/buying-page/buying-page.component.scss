@@ -1,0 +1,37 @@
+:host{
+    display: block;
+    position: relative;
+    height:50px;
+    width:100%;
+
+
+}
+
+.new-note{
+    margin:20px;
+}
+
+.note{
+    margin:20px;
+}
+
+.menu{
+        .element{
+            position:relative;
+            height:50px;
+            display:grid;
+            place-content: center;
+            float: left;
+            padding-left: 10px;
+            padding-right:10px;
+        }
+
+    .element.active-link{
+        background: hotpink;
+    }  
+
+    .element:hover{
+        cursor: pointer;
+        background: greenyellow;
+    }
+}

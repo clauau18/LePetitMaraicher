@@ -1,19 +1,22 @@
 <p>buying-page works!</p>
 <div class="display">
     <div class="description">Description</div>
-    <div id="promo">Bon plan du jour 
-        <div class="vegetable" >
-                <div class="name">ZGEFGEZ</div>
-                    
-                
-                <div class="price">
+   
+        <form>
+            <input name="nameVegetable" type="text" [(ngModel)]="nameVegetable" placeholder="Nom de l'aliment"/>
+            <input name="priceVegetable" type="text" [(ngModel)]="priceVegetable" placeholder="Prix de l'aliment"/>
+            <button (click)=addVegetable() >Ajouter</button>
+        </form>
 
-                </div>
-                <div class="quantity">
-
-                </div>
+        
+        <div class=vegetables > 
+            <div class="vegetable" *ngFor="let vegetable of vegetables">
+                    <div class="name"> {{vegetable.nameVegetable}}</div>
+                    <div class="price"> {{vegetable.priceVegetable}}</div>
+                    <div class="quantity"> {{vegetable.quantityVegetable}}</div>
+            </div>
         </div>
-    </div>  
+        
     
 </div>
 
