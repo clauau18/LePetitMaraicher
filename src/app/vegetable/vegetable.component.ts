@@ -21,7 +21,7 @@ export class VegetableComponent implements OnInit {
 
   saveVegetable():void {
     this.vegetablesService.saveVegetable(this.vegetable);
-    this.router.navigate(["/vegetables"])
+    this.router.navigate(["/buying"])
   }
 
 }

@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { AdminpageComponent } from './adminpage/adminpage.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     ConnexionPageComponent,
     BasketPageComponent,
     SignupPageComponent,
-    PaymentPageComponent
+    PaymentPageComponent,
+    AdminpageComponent
   ],
   imports: [
     BrowserModule,

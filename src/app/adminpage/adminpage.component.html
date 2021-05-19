@@ -1,0 +1,9 @@
+<div class="display">
+   Description
+        <form>
+            <input name="nameVegetable" type="text" [(ngModel)]="vegetablesService.nameVegetable" placeholder="Nom de l'aliment"/>
+            <input name="priceVegetable" type="text" [(ngModel)]="vegetablesService.priceVegetable" placeholder="Prix de l'aliment"/>
+            <button (click)=vegetablesService.addVegetable() >Ajouter</button>
+        </form>
+
+</div>

@@ -2,22 +2,16 @@
 <div class="display">
     <div class="description">Description</div>
    
-        <form>
-            <input name="nameVegetable" type="text" [(ngModel)]="vegetablesService.nameVegetable" placeholder="Nom de l'aliment"/>
-            <input name="priceVegetable" type="text" [(ngModel)]="vegetablesService.priceVegetable" placeholder="Prix de l'aliment"/>
-            <button (click)=vegetablesService.addVegetable() >Ajouter</button>
-        </form>
-
-        
         <div class=vegetables > 
             <div class="vegetable" *ngFor="let vegetable of vegetablesService.vegetables">
                     <div class="name"> {{vegetable.vegetableName}}</div>
                     <div class="price"> {{vegetable.vegetablePrice}}</div>
                     <div class="quantity"> {{vegetable.vegetableQuantity}}</div>
+                    <button class="edit" routerLink="/vegetable/{{vegetable.vegetableId}}">Edit</button>
             </div>
         </div>
 
-        <button class="edit" routerLink="/vegetable/{{vegetablesService.vegetableId}}">Edit</button>
+         <!---->
     
 </div>
 
