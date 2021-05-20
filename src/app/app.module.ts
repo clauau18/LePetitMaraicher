@@ -14,10 +14,14 @@ import { BasketPageComponent } from './basket-page/basket-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+
 import { FormsModule } from '@angular/forms';
 import { AdminpageComponent } from './adminpage/adminpage.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 @NgModule({
@@ -41,7 +45,9 @@ import { AdminpageComponent } from './adminpage/adminpage.component';
     MatToolbarModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatSliderModule
 
   ],
   providers: [],
