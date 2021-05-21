@@ -1,19 +1,30 @@
 <body class="mat-app-background">
-    <p>buying-page works!</p>
-    <div class="display">
-        <div class="description">Description</div>
     
-            <div class=vegetables > 
-                <div class="vegetable" *ngFor="let vegetable of vegetablesService.vegetables">
-                        <div class="name"> {{vegetable.vegetableName}}</div>
-                        <div class="price"> {{vegetable.vegetablePrice}}</div>
-                        <div class="quantity"> {{vegetable.vegetableQuantity}}</div>
-                        <button class="edit" routerLink="/vegetable/{{vegetable.vegetableId}}">Edit</button>
+    <div class="display">
+        <div class="description">
+            <div class="bandeau master">
+                <h1>Bienvenue dans Le Petit Maraicher</h1>
+                <div class="desc">
+                    <p>Ici, retrouvez une large sélection de légumes et fruits BIO</p>
+                    <p>Respect des hommes, de la biodiversité, du bien être animal et de l’environnement.</p>
                 </div>
+                <h3>Chez nous, vos courses sont livrées gratuitement en 1h!</h3>
+                <h4>(même le dimanche)</h4>
             </div>
+        </div>
 
+        <!-- Ajouter Filtre + Rechercher -->
+    
+        <div class=vegetables>
+            <div class="vegetable" *ngFor="let vegetable of vegetablesService.vegetables">
+                <img src="/Users/zeina/Desktop/ProjetWeb/LePetitMaraicher/carrottes.jpeg" alt="Braquette de fraises" width="600" height="400">
+                <div class="name"> {{vegetable.vegetableName}}</div>
+                <div class="price"> {{vegetable.vegetablePrice}}</div>
+                <div class="quantity"> {{vegetable.vegetableQuantity}}</div>
+                <button class="edit" routerLink="/vegetable/{{vegetable.vegetableId}}">Edit</button>
+            </div>
+        </div>
             <!---->
-        
     </div>
 </body>
 
