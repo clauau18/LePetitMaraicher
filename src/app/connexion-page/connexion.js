@@ -1,4 +1,4 @@
-var mysql = require('mysql');
+/* var mysql = require('mysql');
 var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
@@ -53,4 +53,4 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
-app.listen(3000);
+app.listen(3000); */
