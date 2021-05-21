@@ -5,7 +5,5 @@
         <button routerLink="/admin" routerLinkActive="active-link" routerLinkActive="active-link" class="element" mat-raised-button color="primary">Administration</button>
     </div>
 
-    <label class="basketPrice">
-        0.00
-    </label>
+    <label class="basketPrice">{{this.basketService.priceBasket}}</label>
 </mat-toolbar>
