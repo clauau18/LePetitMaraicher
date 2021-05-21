@@ -14,15 +14,24 @@ export class BasketService {
   constructor() {
     this.priceBasket=0;
    }
-  addToBasket(): void {
-    var vegetable: Vegetable = new Vegetable();
-    vegetable.vegetableId = this.vegetable.vegetableId;
-    vegetable.vegetableName = this.vegetable.vegetableName;
-    vegetable.vegetablePrice = this.vegetable.vegetablePrice;
-    vegetable.vegetableQuantity = this.vegetable.vegetableQuantity;
 
-    this.priceBasket += vegetable.vegetablePrice;
+
+  addToBasket(vegetable:Vegetable): void {
+    console.log(vegetable.vegetablePrice)
+
+    this.priceBasket = this.ConvertToInt(this.priceBasket) + this.ConvertToInt(vegetable.vegetablePrice);
     this.items.push(vegetable);
+  }
+
+  removeFromBasket(vegetable:Vegetable): void {
+    console.log(vegetable.vegetablePrice)
+
+    this.priceBasket = this.ConvertToInt(this.priceBasket) - this.ConvertToInt(vegetable.vegetablePrice);
+    this.items.push(vegetable);
+  }
+
+  ConvertToInt(val:any){
+    return parseInt(val);
   }
 
   getPrice() {
