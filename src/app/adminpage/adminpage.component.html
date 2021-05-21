@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <body class="mat-app-background">
+        
+        <div class="adminControl"> 
+            <form class="example-form">
+                
+                    <mat-form-field class="example-full-width">
+                        Créer un aliment
+                    </mat-form-field>
+                    
+                        <mat-label>Nom de l'aliment</mat-label>
+                        <input matInput name="nameVegetable" type="text" [(ngModel)]="vegetablesService.nameVegetable" placeholder="Ex : Carotte"/>
+                    
+
+                    
+                        <mat-label>Prix de l'aliment en €</mat-label>
+                        <input matInput name="priceVegetable" type="text" [(ngModel)]="vegetablesService.priceVegetable" placeholder="Ex : X.X "/>
+                    
+
+                    <button (click)=vegetablesService.addVegetable() mat-raised-button color="warn">Ajouter</button>
+            
+            </form>
+        </div>
+        <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+
+    </body>
+</html>

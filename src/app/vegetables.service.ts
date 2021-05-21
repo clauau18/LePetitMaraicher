@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 
+import {Vegetable} from './models/vegetable';
+
 @Injectable({
   providedIn: 'root'
 })
 export class VegetablesService {
-
-  nameVegetable: string | undefined;
-  priceVegetable: string | undefined;
+  vegetableId!: number;
+  nameVegetable!: string;
+  priceVegetable!: number;
   quantityVegetable: string = "1 kg";
 
-  vegetables:Array<{nameVegetable: string, priceVegetable: string, quantityVegetable: string}> =  new Array<{nameVegetable: string, priceVegetable: string, quantityVegetable: string}>();
+  vegetables:Array<Vegetable> =  new Array<Vegetable>();
 
   constructor() { }
 
@@ -17,20 +19,35 @@ export class VegetablesService {
   }
 
   addVegetable(): void {
-    var vegetable: any = {
-      id:Math.random(),
-      nameVegetable: this.nameVegetable,
-      priceVegetable: this.priceVegetable,
-      quantityVegetable: this.quantityVegetable
-    }
+    var vegetable: Vegetable = new Vegetable();
+    vegetable.vegetableId = Math.random();
+    vegetable.vegetableName = this.nameVegetable;
+    vegetable.vegetablePrice = this.priceVegetable;
+    vegetable.vegetableQuantity = this.quantityVegetable;
+
     this.nameVegetable = ""; // sera bindé dans la page HTML
-    this.priceVegetable = "";
+    this.priceVegetable = 0;
     this.vegetables.push(vegetable);
   }
 
-  deleteNode(vegetable:any): void {
+  deleteVegetable(vegetable:Vegetable): void {
     var index = this.vegetables.indexOf(vegetable);
     this.vegetables.splice(index,1);
+  }
+
+  getVegetable(vegetableId:number): Vegetable {
+    for(let i=0; i< this.vegetables.length;i++) {
+      var vegetable = this.vegetables[i];
+      if (vegetable.vegetableId == vegetableId)
+        return vegetable;
+    }
+    return null as any;
+  }
+
+  saveVegetable(vegetable:Vegetable):any {
+    var index = this.vegetables.indexOf(vegetable);
+    this.vegetables.splice(index,1);
+    this.vegetables.push(vegetable);
   }
 
 }

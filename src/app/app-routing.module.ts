@@ -9,6 +9,7 @@ import {CommandResumeComponent} from './command-resume/command-resume.component'
 import {BasketPageComponent} from './basket-page/basket-page.component';
 import {PaymentPageComponent} from './payment-page/payment-page.component';
 import {SignupPageComponent} from './signup-page/signup-page.component';
+import {AdminpageComponent} from './adminpage/adminpage.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'command',component:CommandResumeComponent},
   {path:'basket',component:BasketPageComponent},
   {path:'payment',component:PaymentPageComponent},
-  {path:'signup',component:SignupPageComponent}
+  {path:'signup',component:SignupPageComponent},
+  {path:'admin',component:AdminpageComponent}
 
 ];
 
