@@ -5,16 +5,15 @@
             <h3>Ajouter ici les produits</h3>
             <form class="example-form">
                 <mat-form-field class="example-full-width">
-                  <mat-label>Ajouter un produit</mat-label>
-                  <input matInput placeholder="Ex. Barquette de Fraises">
-                </mat-form-field>
-              
-                <mat-form-field class="example-full-width">
-                  <mat-label>Prix du produit en €/Quantité</mat-label>
-                  <textarea matInput placeholder="Ex. 4€/barquette de 20 fraises"></textarea>
+                    Créer un aliment
                 </mat-form-field>
 
-                <button (click)=vegetablesService.addVegetable() mat-raised-button color="warn">Ajouter</button>
+                    <mat-label>Nom de l'aliment</mat-label>
+                    <input matInput name="nameVegetable" type="text" [(ngModel)]="vegetablesService.nameVegetable" placeholder="Ex : Carotte"/>
+
+                    <mat-label>Prix de l'aliment en €</mat-label>
+                    <input matInput name="priceVegetable" type="text" [(ngModel)]="vegetablesService.priceVegetable" placeholder="Ex : X.X "/>
+                    <button (click)=vegetablesService.addVegetable() mat-raised-button color="warn">Ajouter</button>
               </form>
               
         </div>

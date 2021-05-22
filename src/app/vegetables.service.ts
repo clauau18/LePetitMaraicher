@@ -25,8 +25,7 @@ export class VegetablesService {
     vegetable.vegetablePrice = this.priceVegetable;
     vegetable.vegetableQuantity = this.quantityVegetable;
 
-    this.nameVegetable = ""; // sera bindé dans la page HTML
-    this.priceVegetable = 0;
+ 
     this.vegetables.push(vegetable);
   }
 
