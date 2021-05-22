@@ -1,9 +1,9 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <mat-toolbar color="primary">
-
+    <img src="logo.png" width="120" height="120">
     <div class="titre">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet"> 
-        <img src="logo" alt="logo" width="600" height="400">
             Le Petit Maraicher
     </div>
 
@@ -21,8 +21,8 @@
         <button *ngIf="!authService.connectedUser" routerLink="/connexion" routerLinkActive="active-link" mat-raised-button>Login</button>
         <button *ngIf="!authService.connectedUser" routerLink="/signup" routerLinkActive="active-link" mat-raised-button>Register</button>
         <button *ngIf="authService.connectedUser" routerLinkActive="active-link"  mat-raised-button (click)="logout()">Logout</button>
-        <button routerLink="/basket" routerLinkActive="active-link" routerLinkActive="active-link" class="element" mat-raised-button>Panier</button>
-        <label class="basketPrice">{{this.basketService.priceBasket}}</label>
+        <button routerLink="/basket" routerLinkActive="active-link" routerLinkActive="active-link" class="element" mat-raised-button><i class="fa fa-shopping-cart" aria-hidden="true"></i>   Panier : <label class="basketPrice">{{this.basketService.priceBasket}}</label> € </button>
+        
     </div>
 
     
