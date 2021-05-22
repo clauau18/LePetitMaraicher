@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Login Form Tutorial</title>
 		<style>
+
 		.login-form {
 			width: 300px;
 			margin: 0 auto;
@@ -23,16 +24,13 @@
 			margin-bottom: 15px;
 			box-sizing:border-box;
 		}
+
 		.login-form button{
-			width: 100%;
-			padding: 15px;
-			margin : 5px;
-			background-color: #535b63;
-			border: 0;
-			box-sizing: border-box;
-			cursor: pointer;
-			font-weight: bold;
-			color: #ffffff;
+			width : 70%;
+			margin-bottom : 1%;
+			margin-left : 15%;
+			background-color : black;
+			
 		}
 		</style>
 	</head>
@@ -42,8 +40,8 @@
 			<form action="auth" method="POST">
 				<input type="text" name="login" placeholder="login" required>
 				<input type="password" name="password" placeholder="Password" required>
-				<button (click)="submit()" mat-raised-button>Se connecter</button>
-				<button class="registerbtn" routerLink="/signup" mat-raised-button>S'inscrire</button>
+				<button (click)="submit()" mat-raised-button color="primary">Se connecter</button>
+				<button class="registerbtn" routerLink="/signup" mat-raised-button color="primary">S'inscrire</button>
 			</form>
 		</div>
 	</body>
