@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -16,4 +16,27 @@
 			</form>
 		</div>
 	</body>
-</html>
+</html>-->
+<mat-form-field>
+    <mat-label>Full Name</mat-label>
+    <input matInput type="text">
+</mat-form-field>
+
+<br/> <br/>
+
+<mat-form-field>
+    <mat-label>Login</mat-label>
+    <input matInput type="text">
+</mat-form-field>
+
+<br/> <br/>
+
+<mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password">
+</mat-form-field>
+
+<br/> <br/>
+
+<button (click)="submit()" mat-raised-button color="accent"> Register </button>
+

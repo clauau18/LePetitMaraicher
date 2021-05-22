@@ -11,17 +11,17 @@ export class AuthService {
         this.isLogged();
     }
 
-    login(username:any, password:any):Observable<any>{
-        return this.http.post("http://localhost:3000/login", {username:username, password:password}, {withCredentials: true}); 
+    login(login:any, password:any):Observable<any>{
+        return this.http.post('http://localhost:3000/login', { login, password}, {withCredentials: true});
     }
 
     logout():Observable<any>{
         console.log("ddd")
-        return this.http.get("http://localhost:3000/login", {withCredentials: true});
+        return this.http.get('http://localhost:3000/logout', {withCredentials: true});
     }
 
     register(username:any, password:any, fullName:any):Observable<any>{
-        return this.http.post("http://localhost:3000/register", {username: username, password:password, fullName:fullName},{withCredentials: true});
+        return this.http.post('http://localhost:3000/register', {username: username, password:password, fullName:fullName},{withCredentials: true});
     }
 
     isLogged(){

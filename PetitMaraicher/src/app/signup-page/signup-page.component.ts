@@ -8,7 +8,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signup-page.component.scss']
 })
 export class SignupPageComponent implements OnInit {
-  username:any = "";
+  login:any = "";
   password:any = "";
   fullName:any="";
 
@@ -17,7 +17,7 @@ export class SignupPageComponent implements OnInit {
   ngOnInit(): void {
   }
   submit():any{
-    this.authService.login(this.username, this.password).subscribe(
+    this.authService.login(this.login, this.password).subscribe(
       (userInfo:any)=>{
         this.authService.connectedUser = userInfo;
       },
