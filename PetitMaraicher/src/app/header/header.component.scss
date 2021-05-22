@@ -3,12 +3,26 @@
 }
 
 .mat-toolbar {
-  height:10%;
+  height:15%;
   background-color:#6a994e;
 }
 
 .menu {
-  margin:30%;
+  margin:15%;
+}
+
+.menu button {
+  margin-left : 2%;
+  width : 50%;
+}
+
+.right-menu {
+  margin-left: 5%;
+}
+
+.right-menu button {
+  margin-left : 2%;
+  width : 40%;
 }
 
 .titre {
