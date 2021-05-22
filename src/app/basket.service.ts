@@ -2,12 +2,18 @@ import { Injectable } from '@angular/core';
 import {Vegetable} from './models/vegetable';
 import {HeaderComponent} from './header/header.component';
 
+
+export interface IHash {
+  [vegetable: string] : number;
+} 
+
 @Injectable({
   providedIn: 'root'
 })
 export class BasketService {
   priceBasket: number;
-  vegetable!: Vegetable;
+  vegetable: Vegetable = new Vegetable;
+  quantity:IHash = {};
 
   items:Array<Vegetable> =  new Array<Vegetable>()
 
@@ -17,17 +23,27 @@ export class BasketService {
 
 
   addToBasket(vegetable:Vegetable): void {
-    console.log(vegetable.vegetablePrice)
-
+    console.log(this.quantity[vegetable.vegetableName])
+    
     this.priceBasket = this.ConvertToInt(this.priceBasket) + this.ConvertToInt(vegetable.vegetablePrice);
-    this.items.push(vegetable);
+
+    if (this.items.indexOf(vegetable) == -1) {
+      this.items.push(vegetable)
+      this.quantity[vegetable.vegetableName] = 1   
+    }
+    else {
+      this.quantity[vegetable.vegetableName] = this.ConvertToInt(this.quantity[vegetable.vegetableName]) + this.ConvertToInt(1)
+    }
+    
   }
 
   removeFromBasket(vegetable:Vegetable): void {
-    console.log(vegetable.vegetablePrice)
-
-    this.priceBasket = this.ConvertToInt(this.priceBasket) - this.ConvertToInt(vegetable.vegetablePrice);
-    this.items.push(vegetable);
+    console.log(this.quantity[vegetable.vegetableName])
+    if (this.items.indexOf(vegetable) != -1 && this.quantity[vegetable.vegetableName] != 0) {
+      this.priceBasket = this.ConvertToInt(this.priceBasket) - this.ConvertToInt(vegetable.vegetablePrice);
+      this.quantity[vegetable.vegetableName] =  this.ConvertToInt(this.quantity[vegetable.vegetableName]) - this.ConvertToInt(1)
+    }
+    
   }
 
   ConvertToInt(val:any){
