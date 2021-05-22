@@ -17,7 +17,7 @@ export class SignupPageComponent implements OnInit {
   ngOnInit(): void {
   }
   submit():any{
-    this.authService.login(this.login, this.password).subscribe(
+    this.authService.register(this.login, this.password, this.fullName).subscribe(
       (userInfo:any)=>{
         this.authService.connectedUser = userInfo;
       },
