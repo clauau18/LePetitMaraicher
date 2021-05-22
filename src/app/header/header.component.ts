@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from '../basket.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,18 @@ import { BasketService } from '../basket.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public basketService: BasketService) { }
+  constructor(public basketService: BasketService, public authService: AuthService) { }
+
 
   ngOnInit(): void {
+  }
+
+  logout():void{
+    this.authService.logout().subscribe(
+      ()=>{
+      },
+      (error)=>{}
+    )
   }
 
 }

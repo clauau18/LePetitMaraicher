@@ -7,7 +7,9 @@ import {Observable} from 'rxjs';
 })
 export class AuthService {
     connectedUser:any = null;
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {
+        this.isLogged();
+    }
 
     login(username:any, password:any):Observable<any>{
         return this.http.post("http://localhost:3000/login", {username:username, password:password}, {withCredentials: true}); 
@@ -20,6 +22,19 @@ export class AuthService {
 
     register(username:any, password:any, fullName:any):Observable<any>{
         return this.http.post("http://localhost:3000/register", {username: username, password:password, fullName:fullName},{withCredentials: true});
+    }
+
+    isLogged(){
+        this.http.post("http://localhost:3000/islogged", {withCredentials : true}).subscribe (
+            (connectedUser)=> {
+                this.connectedUser = connectedUser;
+                console.log(this.connectedUser)
+                console.log("connected")
+            },
+            (error) => {
+                console.log("not connected")
+            }
+        )
     }
 
 }
