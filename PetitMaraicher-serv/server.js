@@ -1,11 +1,16 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
+
+app.listen(3000, ()=>{console.log("Listening on port 3000")});
+
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
+
+
 const mongoose = require('mongoose');
-const Note = require('./models/note');
+const Vegetable = require('./models/vegetable');
 const User = require('./models/user');
 mongoose.connect('mongodb+srv://myuser:dauphine123@cluster0.ype3m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     .then(() =>{
@@ -22,6 +27,42 @@ app.use((req, res, next) => {
    res.set('Access-Control-Allow-Credentials', true);
    next();
 });
+
+
+app.get('/buying', (request, response) => {
+   response.json({data:"get all the vegetables"})
+});
+
+app.get('/buying/:vegetable', (request, response) => {
+   response.json({data:"get vegetables"})
+});
+
+app.post('/buying', (request, response) => {
+
+   let requestVegetable = request.body;
+
+   let newVegetable = new Vegetable({
+      vegetableId: requestVegetable.vegetableId,
+      vegetableName:  requestVegetable.vegetableName,
+      vegetablePrice: requestVegetable.vegetablePrice,
+      vegetableQuantity: requestVegetable.vegetableQuantity
+   });
+
+   newVegetable.save((error, vegetable)=>{
+      if (error) return console.error(err);
+      console.log(vegetable)
+      response.json(vegetable)
+   });
+});
+
+app.put('/buying', (request, response) => {
+   response.json({data:"PUT Modif vegetable"})
+});
+
+
+/*app.use((req, res, next) => {
+   next();
+});*/
 
 app.use(cors({credentials: true, origin: 'http://localhost:4200'}));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -136,4 +177,4 @@ app.get('/islogged', (request, response) => {
    })
 })
 
-app.listen(3000, ()=>{console.log("Listening on port 3000")});
+

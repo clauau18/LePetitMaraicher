@@ -1,18 +1,29 @@
 <mat-toolbar color="primary">
+
+    <div class="titre">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet"> 
+        <img src="/logo.png" alt="logo" width="600" height="400">
+            Le Petit Maraicher
+    </div>
+
     <div class="menu">
-        <button routerLink="/home" routerLinkActive="active-link" class="element" mat-raised-button color="primary">Accueil</button>
+
         <button routerLink="/buying" routerLinkActive="active-link" routerLinkActive="active-link" class="element" mat-raised-button color="primary">Le marché</button>
         <button routerLink="/admin" routerLinkActive="active-link" routerLinkActive="active-link" class="element" mat-raised-button color="primary">Administration</button>
-        <button routerLink="/basket" routerLinkActive="active-link" routerLinkActive="active-link" class="element" mat-raised-button color="white">Panier</button>
+        <button routerLink="/basket" routerLinkActive="active-link" routerLinkActive="active-link" class="element" mat-raised-button color="primary">Panier</button>
+        
     </div>
 
     <label class="basketPrice">{{this.basketService.priceBasket}}</label>
 
-<div style="margin-left:700px;padding:5px;">
+<!--<div style="margin-left:700px;padding:5px;">
     <span *ngIf="authService.connectedUser">{{authService.connectedUser.fullName}}</span>
     <button *ngIf="!authService.connectedUser" routerLink="/connexion" routerLinkActive="active-link" mat-raised-button color="accent">Login</button>
     <button *ngIf="!authService.connectedUser" routerLink="/signup" routerLinkActive="active-link" mat-raised-button color="accent">Register</button>
     <button *ngIf="authService.connectedUser" routerLinkActive="active-link"  mat-raised-button color="accent" (click)="logout()">Logout</button>
 </div>
+-->
 
 </mat-toolbar>
+
