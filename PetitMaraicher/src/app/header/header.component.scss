@@ -1,3 +1,36 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.mat-toolbar {
+  height:15%;
+  background-color:#6a994e;
+}
+
+.img {
+  background-image: url(logo.png);
+}
+
+.menu {
+  margin:15%;
+}
+
+.menu button {
+  margin-left : 2%;
+  width : 60%;
+  background-color: #F2E8CF;
+}
+
+.right-menu {
+  margin-left: 5%;
+}
+
+.right-menu button {
+  margin-left : 2%;
+  width : 40%;
+}
+
+.titre {
+  font-size:30px;
+  font-family: 'Pattaya';
+}
