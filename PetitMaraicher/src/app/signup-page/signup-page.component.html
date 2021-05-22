@@ -1,42 +1,34 @@
-<!--<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>S'inscrire</title>
-	</head>
-	<body>
-		<div class="register-form">
-			<h1>Register Form</h1>
-			<form action="auth" method="POST">
-				<input type="text" name="fullname" placeholder="fullname" required>
-                <input type="text" name="login" placeholder="login" required>
-				<input type="password" name="password" placeholder="Password" required>
-				<button (click) = "submit()" mat-raised-button color="primary">S'inscrire</button>
-				<button class="cnxnbtn" routerLink="/connexion" mat-raised-button color="primary">Se connecter</button>
-			</form>
-		</div>
-	</body>
-</html>-->
-<mat-form-field>
-    <mat-label>Full Name</mat-label>
-    <input matInput type="text" [(ngModel)]="fullName">
-</mat-form-field>
+<body>
 
-<br/> <br/>
+	<div class = "form">
+	<div class = "titre"> Register </div>
+	<mat-form-field>
+		<mat-label>Full Name</mat-label>
+		<input matInput type="text" [(ngModel)]="fullName">
+	</mat-form-field>
 
-<mat-form-field>
-    <mat-label>Login</mat-label>
-    <input matInput type="text" [(ngModel)]="login">
-</mat-form-field>
+	<br/> <br/>
 
-<br/> <br/>
+	<mat-form-field>
+		<mat-label>Login</mat-label>
+		<input matInput type="text" [(ngModel)]="login">
+	</mat-form-field>
 
-<mat-form-field>
-    <mat-label>Password</mat-label>
-    <input matInput type="password" [(ngModel)]="password">
-</mat-form-field>
+	<br/> <br/>
 
-<br/> <br/>
+	<mat-form-field>
+		<mat-label>Password</mat-label>
+		<input matInput type="password" [(ngModel)]="password">
+	</mat-form-field>
 
-<button (click)="submit()" mat-raised-button color="accent"> Register </button>
+	<br/> <br/>
 
+	<div class ="btns">
+	<button (click)="submit()" mat-raised-button> Register </button>
+	<br/> <br/>
+	<p>Vous êtes déjà inscrit?</p>
+	<button mat-raised-button routerLink="/connexion"> Se connecter </button>
+	</div>
+</div>
+
+</body>
