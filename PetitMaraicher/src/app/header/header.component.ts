@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from '../basket.service';
-import { AuthService } from '../authold.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
