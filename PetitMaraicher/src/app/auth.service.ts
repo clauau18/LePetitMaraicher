@@ -12,7 +12,7 @@ export class AuthService {
     }
 
     login(login:any, password:any):Observable<any>{
-        return this.http.post('http://localhost:3000/login', { login, password}, {withCredentials: true});
+        return this.http.post('http://localhost:3000/connexion', { login, password}, {withCredentials: true});
     }
 
     logout():Observable<any>{
@@ -20,8 +20,8 @@ export class AuthService {
         return this.http.get('http://localhost:3000/logout', {withCredentials: true});
     }
 
-    register(username:any, password:any, fullName:any):Observable<any>{
-        return this.http.post('http://localhost:3000/register', {username: username, password:password, fullName:fullName},{withCredentials: true});
+    register(login:any, password:any, fullName:any):Observable<any>{
+        return this.http.post('http://localhost:3000/signup', {login: login, password:password, fullName:fullName},{withCredentials: true});
     }
 
     isLogged(){
