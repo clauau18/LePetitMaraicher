@@ -20,8 +20,8 @@ export class AuthService {
         return this.http.get('http://localhost:3000/logout', {withCredentials: true});
     }
 
-    register(login:any, password:any, fullName:any):Observable<any>{
-        return this.http.post('http://localhost:3000/signup', {login: login, password:password, fullName:fullName},{withCredentials: true});
+    register(login:any, password:any, fullName:any, adresse:any, codepostal:any, ville:any):Observable<any>{
+        return this.http.post('http://localhost:3000/signup', {login: login, password:password, fullName:fullName, adresse:adresse, codepostal:codepostal, ville:ville},{withCredentials: true});
     }
 
     isLogged(){

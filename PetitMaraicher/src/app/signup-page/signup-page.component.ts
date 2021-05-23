@@ -11,13 +11,16 @@ export class SignupPageComponent implements OnInit {
   login:any = "";
   password:any = "";
   fullName:any="";
+  adresse:any="";
+  codepostal:any="";
+  ville:any="";
 
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
   }
   submit():any{
-    this.authService.register(this.login, this.password, this.fullName).subscribe(
+    this.authService.register(this.login, this.password, this.fullName, this.adresse, this.codepostal, this.ville).subscribe(
       (userInfo:any)=>{
         this.authService.connectedUser = userInfo;
       },

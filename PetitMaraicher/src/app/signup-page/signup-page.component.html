@@ -10,6 +10,27 @@
 	<br/> <br/>
 
 	<mat-form-field>
+		<mat-label>Adresse</mat-label>
+		<input matInput type="text" [(ngModel)]="adresse">
+	</mat-form-field>
+
+	<br/> <br/>
+
+	<mat-form-field>
+		<mat-label>Code Postal</mat-label>
+		<input matInput type="text" [(ngModel)]="codepostal">
+	</mat-form-field>
+
+	<br/> <br/>
+
+	<mat-form-field>
+		<mat-label>Ville</mat-label>
+		<input matInput type="text" [(ngModel)]="ville">
+	</mat-form-field>
+
+	<br/> <br/>
+
+	<mat-form-field>
 		<mat-label>Login</mat-label>
 		<input matInput type="text" [(ngModel)]="login">
 	</mat-form-field>
@@ -24,7 +45,7 @@
 	<br/> <br/>
 
 	<div class ="btns">
-	<button (click)="submit()" outerLink="/connexion" mat-raised-button> Register </button>
+	<button (click)="submit()" routerLink="/connexion" mat-raised-button> Register </button>
 	<br/> <br/>
 	<p>Vous êtes déjà inscrit?</p>
 	<button mat-raised-button routerLink="/connexion"> Se connecter </button>
