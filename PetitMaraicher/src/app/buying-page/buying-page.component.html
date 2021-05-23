@@ -1,6 +1,7 @@
 <body class="mat-app-background">
 
     <div class="display">
+        <img src="market.jpeg" width="500" height="300">
         <div class="description">
             <div class="bandeau master">
                 <br>
@@ -13,13 +14,12 @@
                 <h4>(même le dimanche)</h4>
             </div>
         </div>
-
         <!-- Ajouter Filtre + Rechercher -->
     
         <div class=vegetables>
             <div class="vegetable" *ngFor="let vegetable of vegetablesService.vegetables">
                 <div class="contenu">
-                    <img src="/Users/zeina/Desktop/ProjetWeb/LePetitMaraicher/carrottes.jpeg" alt="Braquette de fraises" width="600" height="400">
+                    <img src="fraise.jpg" alt="Braquette de fraises">
                     <div class="name"> {{vegetable.vegetableName}}</div>
                     <div class="price"> {{vegetable.vegetablePrice}}</div>
                     <div class="quantity"> {{vegetable.vegetableQuantity}}</div>
@@ -29,7 +29,7 @@
                         <button class="removeBasket" (click)="basketService.removeFromBasket(vegetable)"mat-stroked-button color="accent">Retirer</button>
                     </div>
                 </div>
-                
+
             </div>
         </div>
             <!----->
