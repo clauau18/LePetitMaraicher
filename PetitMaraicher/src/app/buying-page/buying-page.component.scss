@@ -6,6 +6,27 @@
     width:100%;
 }
 
+.md-form {
+    margin-top: 10%;
+    margin-left:30%;
+    
+}
+
+.active-pink-2 input[type=search]:focus:not([readonly]) {
+    border-bottom: 1px solid #BC4749;
+    border-top: 0;
+    box-shadow: 0 1px 0 0 #BC4749;
+    width : 500px;
+    height:30px;
+}
+    
+.active-pink input[type=search] {
+    border-bottom: 1px solid #BC4749;
+    box-shadow: 0 1px 0 0 #BC4749;
+    width : 500px;
+    height:30px;
+}
+
 .vegetables{
     margin-top:6%;
     margin-left: 7%;
