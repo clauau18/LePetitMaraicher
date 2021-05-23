@@ -7,7 +7,6 @@ app.listen(3000, ()=>{console.log("Listening on port 3000")});
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
-
 app.use((req, res, next) => {
    res.set('Access-Control-Allow-Origin', '*');
    res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -23,6 +22,7 @@ const mongoose = require('mongoose');
 const Vegetable = require('./models/vegetable');
 const User = require('./models/user');
 
+
 mongoose.connect('mongodb+srv://myuser:dauphine123@cluster0.ype3m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     .then(() =>{
         console.log("Successfully connected to DB!");
@@ -30,8 +30,6 @@ mongoose.connect('mongodb+srv://myuser:dauphine123@cluster0.ype3m.mongodb.net/my
     .catch((error) => {
        console.log("Unable to connect to DB!");
     });
-
-
 
 app.get('/buying', (request, response) => {
    Vegetable.find((error, vegetables) => {
@@ -99,6 +97,8 @@ app.post('/connexion', (request, response) => {
 app.post('/signup', (request, response) => {
    var newUser = new User({
       login: request.body.login,
+      adresse: request.body.adresse,
+      codepostal: request.body.codepostal,
       password: request.body.password,
       fullName: request.body.fullName
 

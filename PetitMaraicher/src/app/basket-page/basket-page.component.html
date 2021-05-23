@@ -1,15 +1,21 @@
 
 <div class="col-25">
+    <div class="titre">Panier<i class="fa fa-shopping-cart"></i></div>
+    
     <div class="vegetable" *ngFor="let item of basketService.items ; let i = index">
-      <div class="name"> {{item.vegetableName}}</div>
-      <div class="price"> {{item.vegetablePrice}}</div>
-      <div class="price"> {{basketService.quantity[item['vegetableName']]}}</div>
+      
+        <div class="right">
+            <div class="name"> {{item.vegetableName}}</div> 
+            <div class="quant"> Quantité : {{basketService.quantity[item['vegetableName']]}}</div>
+        </div>
+        <div class="left">
+            <div class="price"> Prix : {{item.vegetablePrice}}</div>
+        </div>
 
-
-      <h4>Panier <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h4>
-      <p>Produit 1 : <span class="price">$15</span></p>
+      <span class="price" style="color:black"></span>
       <hr>
-      <p>Total :  <span class="price" style="color:black"><b><label class="basketPrice">{{this.basketService.priceBasket}}</label></b></span></p>
-
     </div>
+    <div class="total"><p>Total :  <span class="price" style="color:black"><b><label class="basketPrice">{{this.basketService.priceBasket}}</label></b></span></p>
+    </div>
+    <input type="submit" routerLink="/payment" value="Valider mon panier" class="btn">
   </div>

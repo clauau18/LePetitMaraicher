@@ -3,5 +3,6 @@ export class Vegetable {
     vegetableName!: string;
     vegetablePrice!: number;
     vegetableQuantity!: string;
+    vegetableImage !: string;
 
 }

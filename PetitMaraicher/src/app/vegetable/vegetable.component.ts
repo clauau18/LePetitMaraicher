@@ -19,7 +19,7 @@ export class VegetableComponent implements OnInit {
     console.log("SNAPSHOT PARAMMAP ID : " + this.route.snapshot.paramMap.get('id'));
     console.log("vegetable ID dans Vegetable Componoent : " +this.vegetableId);
 
-    this.vegetable = {_id: this.vegetableId, vegetableName: '', vegetablePrice: 0, vegetableQuantity : "1 kg"};
+    this.vegetable = {_id: this.vegetableId, vegetableName: '', vegetablePrice: 0, vegetableQuantity : "1 kg", vegetableImage:""};
 
     console.log('id from comp' + this.vegetable);
     console.log("this.egtable" + this.vegetablesService.getVegetable(this.vegetableId))

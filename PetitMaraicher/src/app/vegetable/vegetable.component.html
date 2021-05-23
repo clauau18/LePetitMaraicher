@@ -1,5 +1,6 @@
 <form>
-    <input name="vegetableName" type="text" [(ngModel)]="vegetable.vegetableName" placeholder="Nom de l'aliment"/>
-    <input name="vegetablePrice" type="number" [(ngModel)]="vegetable.vegetablePrice" placeholder="Prix de l'aliment"/>
-    <button (click)="updateVegetable()" >Ajouter</button>
+    <input name="nameVegetable" type="text" [(ngModel)]="vegetable.vegetableName" placeholder="Nom de l'aliment"/>
+    <input name="priceVegetable" type="text" [(ngModel)]="vegetable.vegetablePrice" placeholder="Prix de l'aliment"/>
+    <input type="file" id="image" name="image" [(ngModel)]="vegetable.vegetableImage" required>
+    <button (click)="saveVegetable()" >Ajouter</button>
 </form>
