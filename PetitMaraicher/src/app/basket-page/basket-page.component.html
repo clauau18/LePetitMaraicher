@@ -1,6 +1,11 @@
 
 <div class="col-25">
-    <div class="container">
+    <div class="vegetable" *ngFor="let item of basketService.items ; let i = index">
+      <div class="name"> {{item.vegetableName}}</div>
+      <div class="price"> {{item.vegetablePrice}}</div>
+      <div class="price"> {{basketService.quantity[item['vegetableName']]}}</div>
+
+
       <h4>Panier <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h4>
       <p>Produit 1 : <span class="price">$15</span></p>
       <hr>
