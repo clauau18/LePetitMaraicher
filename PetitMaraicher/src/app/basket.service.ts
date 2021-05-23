@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Vegetable} from './models/vegetable';
 import {HeaderComponent} from './header/header.component';
+import {BasketPageComponent} from './basket-page/basket-page.component';
 
 
 export interface IHash {

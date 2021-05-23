@@ -92,7 +92,8 @@ app.post('/signup', (request, response) => {
    var newUser = new User({
       login: request.body.login,
       password: request.body.password,
-      fullName: request.body.fullName,
+      fullName: request.body.fullName
+
    })
    User.countDocuments({login: newUser.login }, function(error, count){
       if (error) return response.status(401).json({msg: 'Error'});
