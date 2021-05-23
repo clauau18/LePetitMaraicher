@@ -18,14 +18,15 @@ export class BuyingPageComponent implements OnInit {
 
   constructor(public vegetablesService: VegetablesService, public basketService: BasketService) { }
 
-  vegetables:Array<Vegetable> =  new Array<Vegetable>();
+  //vegetables:Array<Vegetable> =  new Array<Vegetable>();
+  vegetables:any
   ngOnInit(): void {
     this.getVegetables();
   }
 
   getVegetables() {
     this.vegetablesService.getVegetables().subscribe(
-      (vegetables:Array<Vegetable>)=>{
+      (vegetables:any)=>{
         console.log("getVegetables PRINT");
         this.vegetables = vegetables;
         console.log(vegetables)

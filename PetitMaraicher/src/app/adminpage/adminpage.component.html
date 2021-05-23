@@ -19,8 +19,30 @@
                     </div>
 
                     <button (click)=this.addVegetable() mat-raised-button color="warn">Ajouter</button>
-
                     
+                    <br/>
+                    <br/>
+
+                    <mat-form-field class="example-full-width">
+                        Créer une utilisateur
+                    </mat-form-field>
+                    <mat-label>Login</mat-label>
+                    <input matInput name="login" type="text" [(ngModel)]="this.nameVegetable" placeholder="Ex : UserXX"/>
+
+                    <mat-label>mot de passe</mat-label>
+                    <input matInput name="password" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : AF4TRFT6y. "/>
+                    <mat-label>codepostal</mat-label>
+                    <input matInput name="codepostal" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : 75013 "/>
+                    <mat-label>ville</mat-label>
+                    <input matInput name="ville" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : Paris"/>
+                    <mat-label>ville</mat-label>
+                    <input matInput name="adresse" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : 44 rue des matelots"/>
+                    <br/>
+                    
+
+                    <button (click)=this.addVegetable() mat-raised-button color="warn">Ajouter</button>
+
+          
               </form>
               
         </div>

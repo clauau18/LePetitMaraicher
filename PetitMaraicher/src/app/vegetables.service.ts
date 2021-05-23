@@ -10,6 +10,7 @@ export class VegetablesService {
 
   vegetables:Array<Vegetable> =  new Array<Vegetable>();
   vegetables2:any;
+
   constructor( private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -44,7 +45,7 @@ export class VegetablesService {
   }
   
   getVegetables():any{
-    console.log(" get Vegetable dans vegetable service")
+    console.log("get VegetableS dans vegetable service")
     return this.http.get('http://localhost:3000/buying');
   }
   updateVegetable(vegetable: Vegetable): Observable<any>{

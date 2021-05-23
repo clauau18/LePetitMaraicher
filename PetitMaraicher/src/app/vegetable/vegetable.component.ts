@@ -10,16 +10,14 @@ import { VegetablesService } from '../vegetables.service';
 })
 export class VegetableComponent implements OnInit {
   vegetableId!: any;
-  vegetable: Vegetable = new Vegetable();
+  vegetable!: Vegetable;
   
   constructor(private route: ActivatedRoute, private router: Router, public vegetablesService: VegetablesService) { }
 
   ngOnInit(): void {
     this.vegetableId = this.route.snapshot.paramMap.get('id');
-    console.log("SNAPSHOT PARAMMAP ID : " + this.route.snapshot.paramMap.get('id'));
-    console.log("vegetable ID dans Vegetable Componoent : " +this.vegetableId);
-
-    this.vegetable = {_id: this.vegetableId, vegetableName: '', vegetablePrice: 0, vegetableQuantity : "1 kg", vegetableImage:""};
+    console.log('id from comp' + this.route.snapshot.paramMap.get('id'));
+    this.vegetable = { vegetableName: '', vegetablePrice: 0, vegetableQuantity : "1 kg", vegetableImage:""};
 
     console.log('id from comp' + this.vegetable);
     console.log("this.egtable" + this.vegetablesService.getVegetable(this.vegetableId))

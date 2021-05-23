@@ -32,7 +32,7 @@ export class AdminpageComponent implements OnInit {
     this.vegetablesService.addVegetable(vegetable).subscribe(
       (vegetables:any)=>{
         this.vegetables.push(vegetable);
-        this.vegetablesService.vegetables2.push(vegetable);
+        //this.vegetablesService.vegetables2.push(vegetable);
       },
       (error: any)=> {
         console.log("Error in addVegetables ")

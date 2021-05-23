@@ -47,6 +47,7 @@ app.get('/buying/:vegetable', (request, response) =>{
       if (error) {
          return response.status(404).json({error: error});
       }
+      console.log("SERVERJSSSSSSSSSSSSSSS3"+vegetable)
       response.status(200).json(vegetable);
    });
 });
@@ -57,7 +58,6 @@ app.post('/buying', (request, response) => {
    let requestVegetable = request.body;
 
    let newVegetable = new Vegetable({
-      _id: requestVegetable._id,
       vegetableName:  requestVegetable.vegetableName,
       vegetablePrice: requestVegetable.vegetablePrice,
       vegetableQuantity: requestVegetable.vegetableQuantity
