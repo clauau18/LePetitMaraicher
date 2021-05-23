@@ -17,6 +17,7 @@ export class AuthService {
 
     logout():Observable<any>{
         console.log("ddd")
+        this.connectedUser = false;
         return this.http.get('http://localhost:3000/logout', {withCredentials: true});
     }
 

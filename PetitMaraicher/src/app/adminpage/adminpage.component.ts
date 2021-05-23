@@ -13,6 +13,7 @@ export class AdminpageComponent implements OnInit {
   priceVegetable!: number;
   quantityVegetable: string = "1 kg";
   vegetables:any;
+  image:any;
   constructor(public vegetablesService: VegetablesService) { }
 
   ngOnInit(): void {
@@ -26,6 +27,7 @@ export class AdminpageComponent implements OnInit {
     vegetable.vegetableName = this.nameVegetable;
     vegetable.vegetablePrice = this.priceVegetable;
     vegetable.vegetableQuantity = this.quantityVegetable;
+
 
     this.vegetablesService.addVegetable(vegetable).subscribe(
       (vegetables:any)=>{
