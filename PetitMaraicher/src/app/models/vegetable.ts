@@ -1,5 +1,5 @@
 export class Vegetable {
-    vegetableId!: number | string;
+    _id?: number | string;
     vegetableName!: string;
     vegetablePrice!: number;
     vegetableQuantity!: string;
