@@ -34,7 +34,11 @@ mongoose.connect('mongodb+srv://myuser:dauphine123@cluster0.ype3m.mongodb.net/my
 
 
 app.get('/buying', (request, response) => {
-   response.json({data: vegetables})
+   Vegetable.find((error, vegetables) => {
+      if (error) return console.error(err);
+      response.json(vegetables);
+   });
+   
 });
 
 app.get('/buying/:vegetable', (request, response) => {
@@ -47,7 +51,7 @@ app.post('/buying', (request, response) => {
    let requestVegetable = request.body;
 
    let newVegetable = new Vegetable({
-      //vegetableId: requestVegetable.vegetableId,
+      _id: requestVegetable._id,
       vegetableName:  requestVegetable.vegetableName,
       vegetablePrice: requestVegetable.vegetablePrice,
       vegetableQuantity: requestVegetable.vegetableQuantity

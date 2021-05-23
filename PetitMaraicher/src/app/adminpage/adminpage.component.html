@@ -9,11 +9,11 @@
                 </mat-form-field>
 
                     <mat-label>Nom de l'aliment</mat-label>
-                    <input matInput name="nameVegetable" type="text" [(ngModel)]="vegetablesService.nameVegetable" placeholder="Ex : Carotte"/>
+                    <input matInput name="nameVegetable" type="text" [(ngModel)]="this.nameVegetable" placeholder="Ex : Carotte"/>
 
                     <mat-label>Prix de l'aliment en €</mat-label>
-                    <input matInput name="priceVegetable" type="text" [(ngModel)]="vegetablesService.priceVegetable" placeholder="Ex : X.X "/>
-                    <button (click)=vegetablesService.addVegetable2() mat-raised-button color="warn">Ajouter</button>
+                    <input matInput name="priceVegetable" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : X.X "/>
+                    <button (click)=this.addVegetable() mat-raised-button color="warn">Ajouter</button>
               </form>
               
         </div>

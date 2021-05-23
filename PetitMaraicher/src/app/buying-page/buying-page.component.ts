@@ -18,38 +18,25 @@ export class BuyingPageComponent implements OnInit {
 
   constructor(public vegetablesService: VegetablesService, public basketService: BasketService) { }
 
-  vegetables:any;
+  vegetables:Array<Vegetable> =  new Array<Vegetable>();
   ngOnInit(): void {
     this.getVegetables();
   }
 
   getVegetables() {
     this.vegetablesService.getVegetables().subscribe(
-      (vegetables:any)=>{
-        this.vegetables = vegetables.data;
+      (vegetables:Array<Vegetable>)=>{
+        console.log("getVegetables PRINT");
+        this.vegetables = vegetables;
+        console.log(vegetables)
+        console.log(this.vegetables)
       },
       (error: any)=> {
         console.log("Error in getVegetables ")
       }
     )
-  }
-
-  addVegetable() {
-    var vegetable: Vegetable = new Vegetable;
     
-    vegetable._id = Math.random();
-    vegetable.vegetableName = this.nameVegetable;
-    vegetable.vegetablePrice = this.priceVegetable;
-    vegetable.vegetableQuantity = this.quantityVegetable;
-
-    this.vegetablesService.addVegetable(vegetable).subscribe(
-      (vegetables:any)=>{
-        this.vegetables = vegetables.data;
-      },
-      (error: any)=> {
-        console.log("Error in addVegetables ")
-      }
-    )
   }
+
 
 }

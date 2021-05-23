@@ -24,7 +24,7 @@
         </form>
     
         <div class=vegetables>
-            <div class="vegetable" *ngFor="let vegetable of vegetablesService.vegetables">
+            <div class="vegetable" *ngFor="let vegetable of vegetables">
                 <div class="contenu">
                     <img src="fraise.jpg" alt="Braquette de fraises">
                     <div class="name"> {{vegetable.vegetableName}}</div>
@@ -39,21 +39,8 @@
 
             </div>
         </div>
+       
 
-        <div class="vegetables">
-            <div *ngFor="let vegetable of vegetables">
-                    <img src="/Users/zeina/Desktop/ProjetWeb/LePetitMaraicher/carrottes.jpeg" alt="Braquette de fraises" width="600" height="400">
-                    <div class="name"> {{vegetable.vegetableName}}</div>
-                    <div class="price"> {{vegetable.vegetablePrice}}</div>
-                    <div class="quantity"> {{vegetable.vegetableQuantity}}</div>
-                    <button class="edit" routerLink="/vegetable/{{vegetable._id}}" >Modifier</button>
-                    <div class=btns>
-                        <button class="addBasket" (click)="basketService.addToBasket(vegetable)" mat-stroked-button color="primary">Ajouter</button>
-                        <button class="removeBasket" (click)="basketService.removeFromBasket(vegetable)"mat-stroked-button color="accent">Retirer</button>
-                    </div>
-            </div>
-        </div>
-            <!----->
     </div>
 </body>
 

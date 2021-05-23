@@ -6,29 +6,16 @@ import {Vegetable} from './models/vegetable';
   providedIn: 'root'
 })
 export class VegetablesService {
-  vegetableId!: number;
-  nameVegetable!: string;
-  priceVegetable!: number;
-  quantityVegetable: string = "1 kg";
 
   vegetables:Array<Vegetable> =  new Array<Vegetable>();
-
+  vegetables2:any;
   constructor( private http: HttpClient) {}
 
   ngOnInit(): void {
   }
   
   
-  addVegetable2(): void {
-    var vegetable: Vegetable = new Vegetable();
-    vegetable._id = Math.random();
-    vegetable.vegetableName = this.nameVegetable;
-    vegetable.vegetablePrice = this.priceVegetable;
-    vegetable.vegetableQuantity = this.quantityVegetable;
-
  
-   this.vegetables.push(vegetable);
- }
 
   deleteVegetable(vegetable:Vegetable): void {
     var index = this.vegetables.indexOf(vegetable);
