@@ -12,7 +12,7 @@ export class AuthService {
     }
 
     login(login:any, password:any):Observable<any>{
-        return this.http.post('http://localhost:3000/connexion', { login, password}, {withCredentials: true});
+        return this.http.post('http://localhost:3000/connexion', {login, password}, {withCredentials: true});
     }
 
     logout():Observable<any>{
