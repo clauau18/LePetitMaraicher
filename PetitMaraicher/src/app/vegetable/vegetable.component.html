@@ -1,5 +1,5 @@
 <form>
-    <input name="nameVegetable" type="text" [(ngModel)]="vegetable.vegetableName" placeholder="Nom de l'aliment"/>
-    <input name="priceVegetable" type="text" [(ngModel)]="vegetable.vegetablePrice" placeholder="Prix de l'aliment"/>
-    <button (click)="saveVegetable()" >Ajouter</button>
+    <input name="vegetableName" type="text" [(ngModel)]="vegetable.vegetableName" placeholder="Nom de l'aliment"/>
+    <input name="vegetablePrice" type="number" [(ngModel)]="vegetable.vegetablePrice" placeholder="Prix de l'aliment"/>
+    <button (click)="updateVegetable()" >Ajouter</button>
 </form>

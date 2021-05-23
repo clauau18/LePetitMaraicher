@@ -12,14 +12,13 @@ export interface IHash {
   providedIn: 'root'
 })
 export class BasketService {
-  priceBasket: number;
+  priceBasket: number = 0;
   vegetable: Vegetable = new Vegetable;
   quantity:IHash = {};
 
   items:Array<Vegetable> =  new Array<Vegetable>()
 
   constructor() {
-    this.priceBasket=0;
    }
 
 

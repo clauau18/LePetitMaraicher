@@ -9,14 +9,40 @@ import { VegetablesService } from '../vegetables.service';
   styleUrls: ['./vegetable.component.scss']
 })
 export class VegetableComponent implements OnInit {
-  vegetableId!: number;
-  vegetable!: Vegetable;
+  vegetableId!: any;
+  vegetable: Vegetable = new Vegetable();
   
   constructor(private route: ActivatedRoute, private router: Router, public vegetablesService: VegetablesService) { }
 
   ngOnInit(): void {
-    this.vegetableId = Number(this.route.snapshot.paramMap.get('id'));
-    this.vegetable = this.vegetablesService.getVegetable(this.vegetableId);
+    this.vegetableId = this.route.snapshot.paramMap.get('id');
+    console.log("SNAPSHOT PARAMMAP ID : " + this.route.snapshot.paramMap.get('id'));
+    console.log("vegetable ID dans Vegetable Componoent : " +this.vegetableId);
+
+    this.vegetable = {_id: this.vegetableId, vegetableName: '', vegetablePrice: 0, vegetableQuantity : "1 kg"};
+
+    console.log('id from comp' + this.vegetable);
+    console.log("this.egtable" + this.vegetablesService.getVegetable(this.vegetableId))
+    this.vegetablesService.getVegetable(this.vegetableId).subscribe(
+        (vegetable: Vegetable) => {
+          this.vegetable = vegetable;
+          console.log('vegetable XXX' + vegetable)
+        },
+        (error) => {
+          console.log('Error');
+        }
+    );
+  }
+
+  updateVegetable(): void{
+    this.vegetablesService.updateVegetable(this.vegetable).subscribe(
+        (vegetable: Vegetable) => {
+          this.router.navigate(['/buying']);
+        },
+        (error:any) => {
+          console.log('Error d update de vegetable');
+        }
+    );
   }
 
   saveVegetable():void {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import {Vegetable} from './models/vegetable';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class VegetablesService {
     this.vegetables.splice(index,1);
   }
 
-  getVegetable(vegetableId:number): Vegetable {
+  getVegetable2(vegetableId:number): Vegetable {
     for(let i=0; i< this.vegetables.length;i++) {
       var vegetable = this.vegetables[i];
       if (vegetable._id == vegetableId)
@@ -31,13 +32,23 @@ export class VegetablesService {
     return null as any;
   }
 
+  getVegetable(vegetableId:any):Observable<any> {
+    
+    console.log("vegetable ID de GETVEGETABLE VEGETABLESERVICE : "+vegetableId);
+    return this.http.get("http://localhost:3000/buying/"+vegetableId);
+  }
+
   addVegetable(vegetable:Vegetable):any {
     return this.http.post("http://localhost:3000/buying", vegetable);
 
   }
   
   getVegetables():any{
+    console.log(" get Vegetable dans vegetable service")
     return this.http.get('http://localhost:3000/buying');
+  }
+  updateVegetable(vegetable: Vegetable): Observable<any>{
+    return this.http.put('http://localhost:3000/buying/' + vegetable._id, vegetable);
   }
 
   saveVegetable(vegetable:Vegetable):any {

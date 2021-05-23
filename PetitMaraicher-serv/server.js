@@ -41,8 +41,16 @@ app.get('/buying', (request, response) => {
    
 });
 
-app.get('/buying/:vegetable', (request, response) => {
-   response.json({data:"get vegetables"})
+
+
+app.get('/buying/:vegetable', (request, response) =>{
+   console.log("ICI get ONE" +request.params.id);
+   Vegetable.findOne( {_id: request.params.id}, (error, vegetable) => {
+      if (error) {
+         return response.status(404).json({error: error});
+      }
+      response.status(200).json(vegetable);
+   });
 });
 
 
