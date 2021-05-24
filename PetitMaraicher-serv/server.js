@@ -70,7 +70,6 @@ app.post('/admin/users', (request, response) => {
 
    newUser.save((error, user)=>{
       if (error) return console.error(err);
-      console.log(user)
       response.json(user)
    });
 });
