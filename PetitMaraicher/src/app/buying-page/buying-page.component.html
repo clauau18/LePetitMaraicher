@@ -1,4 +1,4 @@
-<body class="mat-app-background">
+ <body class="mat-app-background">
 
     <div class="display">
         <img src="market.jpeg" width="500" height="300">
@@ -39,10 +39,12 @@
                     </div>
                     
                     <div class= "btns">
+                        
                         <button class="addBasket" routerLink="/vegetable/{{vegetable._id}}" mat-stroked-button color="primary">Modifier</button>
+                        <button class="delete" (click)="deleteVegetable(vegetable)"mat-stroked-button color="primary">Supprimer</button>
                         <button class="addBasket" (click)="basketService.addToBasket(vegetable)" mat-stroked-button color="primary">Ajouter</button>
                         <button class="removeBasket" (click)="basketService.removeFromBasket(vegetable)"mat-stroked-button color="primary">Retirer</button>
-                        <button class="delete" (click)="deleteVegetable(vegetable)"mat-stroked-button color="primary">supprimer</button>
+
                     </div>
                         
                 </div>

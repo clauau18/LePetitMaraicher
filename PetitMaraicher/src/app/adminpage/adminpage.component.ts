@@ -14,6 +14,7 @@ export class AdminpageComponent implements OnInit {
   quantityVegetable: string = "1 kg";
   vegetables:any;
   image:any;
+
   constructor(public vegetablesService: VegetablesService) { }
 
   ngOnInit(): void {
