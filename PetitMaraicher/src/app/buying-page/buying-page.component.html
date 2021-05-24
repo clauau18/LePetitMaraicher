@@ -24,31 +24,36 @@
         </form>
         
         <div class=vegetables>
+
             <div class="vegetable" *ngFor="let vegetable of vegetables">
+                
                 <div class="contenu">
 
-                    
+                    <div class = "img">
                         <img src="fraise.jpg" alt="Barquette de fraises">
                     
                         <div class="name"> {{vegetable.vegetableName}}</div>
                         <div class="price"> Prix : {{vegetable.vegetablePrice}}</div>
                         <div class="quantity"> Quantité : {{vegetable.vegetableQuantity}}</div>
                    
-
+                    </div>
                     
-                    <div class=btns>
-                        <button class="edit" routerLink="/vegetable/{{vegetable._id}}" mat-stroked-button color="primary">Modifier</button>
+                    <div class= "btns">
+                        <button class="addBasket" routerLink="/vegetable/{{vegetable._id}}" mat-stroked-button color="primary">Modifier</button>
                         <button class="addBasket" (click)="basketService.addToBasket(vegetable)" mat-stroked-button color="primary">Ajouter</button>
-                        <button class="removeBasket" (click)="basketService.removeFromBasket(vegetable)"mat-stroked-button color="accent">Retirer</button>
-                        <button class="delete" (click)="deleteVegetable(vegetable)"mat-stroked-button color="accent">supprimer</button>
+                        <button class="removeBasket" (click)="basketService.removeFromBasket(vegetable)"mat-stroked-button color="primary">Retirer</button>
+                        <button class="delete" (click)="deleteVegetable(vegetable)"mat-stroked-button color="primary">supprimer</button>
                     </div>
                         
                 </div>
                 
-
             </div>
+
+            <app-note-block *ngFor="let vegetable of vegetables" [vegetable]="vegetable" (deleteVegetable)="deleteVegetable($event)" (removeFromBasket)="basketService.removeFromBasket($event)" (addToBasket)="basketService.addToBasket($event)" >  
+            </app-note-block>
+
         </div>
-        <app-note-block *ngFor="let vegetable of vegetables" [vegetable]="vegetable" (deleteVegetable)="deleteVegetable($event)" (removeFromBasket)="basketService.removeFromBasket($event)" (addToBasket)="basketService.addToBasket($event)" >  </app-note-block>
+        
         
             <!----->
     </div>

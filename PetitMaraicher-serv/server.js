@@ -129,6 +129,7 @@ app.post('/signup', (request, response) => {
       login: request.body.login,
       adresse: request.body.adresse,
       codepostal: request.body.codepostal,
+      ville: request.body.ville,
       password: request.body.password,
       fullName: request.body.fullName
 
