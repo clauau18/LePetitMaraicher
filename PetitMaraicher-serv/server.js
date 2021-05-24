@@ -41,7 +41,7 @@ app.get('/buying', (request, response) => {
 
 
 
-app.get('/buying/:vegetable', (request, response) =>{
+app.get('/buying/:id', (request, response) =>{
    
    console.log("ICI get ONE" + request.params._id);
    Vegetable.findOne( {_id: request.params.id}, (error, vegetable) => {
@@ -72,7 +72,7 @@ app.post('/buying', (request, response) => {
    });
 });
 
-app.put('/buying:id', (request, response) => {
+app.put('/buying/:id', (request, response) => {
    let requestVegetable = request.body;
 
    let newVegetable = new Vegetable({

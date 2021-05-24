@@ -37,7 +37,7 @@
 
                     
                     <div class=btns>
-                        <button class="addBasket" routerLink="/vegetable/{{vegetable._id}}" mat-stroked-button color="primary">Modifier</button>
+                        <button class="edit" routerLink="/vegetable/{{vegetable._id}}" mat-stroked-button color="primary">Modifier</button>
                         <button class="addBasket" (click)="basketService.addToBasket(vegetable)" mat-stroked-button color="primary">Ajouter</button>
                         <button class="removeBasket" (click)="basketService.removeFromBasket(vegetable)"mat-stroked-button color="accent">Retirer</button>
                         <button class="delete" (click)="deleteVegetable(vegetable)"mat-stroked-button color="accent">supprimer</button>
