@@ -2,32 +2,40 @@
 <html lang="en">
     <body class="mat-app-background">
         <div class="adminControl"> 
-            <h3>Ajouter ici les produits</h3>
+            
             
             <form>
-                <div class="vegetable">
-                    <mat-label>Nom de l'aliment</mat-label>
+                <div class="vegetable" style="
+                width: 400px;
+                margin-left: 300px;
+                height:300px;
+                margin-top: 100px;">
+                    <div class="titre">Ajouter un produit</div>
+                    <mat-form-field appearance="fill"><mat-label>Nom de l'aliment</mat-label>
                     <input matInput name="nameVegetable" type="text" [(ngModel)]="this.nameVegetable" placeholder="Ex : Carotte"/>
-
-                    <mat-label>Prix de l'aliment en €</mat-label>
-                    <input matInput name="priceVegetable" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : X.X "/>
+                    </mat-form-field>
                     <br/>
+                    
+                    <mat-form-field appearance="fill"><mat-label>Prix de l'aliment en €</mat-label>
+                    <input matInput name="priceVegetable" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : X.X "/>
+                    </mat-form-field>
+                    <br/>
+                    
                     <div>
                         <input type="file" id="image" name="image" value="" required>
                     </div>
+                    <br/>
 
-                    <button (click)=this.addVegetable() mat-raised-button color="warn">Ajouter</button>
-                    
-                    <br/>
-                    <br/>
+                    <button (click)=this.addVegetable() mat-raised-button>Ajouter</button>
 
                 </div>
 
                 
-                <div class="User">
-
-                    <h3>Créer une utilisateur</h3>
+                <div class="user" style="
+                width: 400px;
+                margin-left: 900px;">
                     <br/>
+                    <div class="titre">Ajouter un utilisateur</div>
                     <mat-form-field appearance="fill"><mat-label>Fullname</mat-label>
                     <input matInput name="fullName" type="text" [(ngModel)]="this.fullName" placeholder="Oliver C"/>
                     </mat-form-field>
@@ -59,19 +67,16 @@
                     <br/>
                     
 
-                    <button (click)=this.addUser() mat-raised-button color="warn">Ajouter</button>
+                    <button (click)=this.addUser() mat-raised-button>Ajouter</button>
             
                 </div>
             
             </form>
-
-
-        
-            
+ 
         </div>
 
-        
-         <table>
+        <br/><br/>
+         <table id="users">
                 <thead>
                     <tr>
                         <th colspan="5">Utilisateurs</th>
@@ -81,9 +86,9 @@
                     <tr>
                         <th>Login</th>
                         <th>Nom complet</th>
-                        <th>ville</th>
-                        <th>codePostal</th>
-                        <th>type</th>
+                        <th>Ville</th>
+                        <th>CodePostal</th>
+                        <th>Type</th>
                         <th>Modifier</th>
 
                     </tr>
