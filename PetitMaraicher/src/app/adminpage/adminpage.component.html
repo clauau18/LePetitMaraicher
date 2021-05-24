@@ -65,6 +65,8 @@
                         <th>ville</th>
                         <th>codePostal</th>
                         <th>type</th>
+                        <th>Modifier</th>
+
                     </tr>
                     <tr class="users" *ngFor="let user of users">
                         <td>{{user.login}}</td>
@@ -72,6 +74,8 @@
                         <td>{{user.ville}}</td>
                         <td>{{user.codepostal}}</td>
                         <td>{{user.type}}</td>
+                        <td><button >Modifier</button>
+                            <button >Supprimer  </button></td>
                     </tr>
                 </tbody>
             </table>
