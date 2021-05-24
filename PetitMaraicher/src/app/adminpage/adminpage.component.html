@@ -55,13 +55,23 @@
          <table>
                 <thead>
                     <tr>
-                        <th colspan="2">The table header</th>
+                        <th colspan="5">Utilisateurs</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <th>Login</th>
+                        <th>Nom complet</th>
+                        <th>ville</th>
+                        <th>codePostal</th>
+                        <th>type</th>
+                    </tr>
                     <tr class="users" *ngFor="let user of users">
                         <td>{{user.login}}</td>
-                        <td>with two columns</td>
+                        <td>{{user.fullName}}</td>
+                        <td>{{user.ville}}</td>
+                        <td>{{user.codepostal}}</td>
+                        <td>{{user.type}}</td>
                     </tr>
                 </tbody>
             </table>
