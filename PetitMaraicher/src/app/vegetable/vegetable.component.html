@@ -1,6 +1,27 @@
+<div class="bloc" style="
+width: 400px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 100px;">
 <form>
-    <input name="nameVegetable" type="text" [(ngModel)]="vegetable.vegetableName" placeholder="Nom de l'aliment"/>
-    <input name="priceVegetable" type="text" [(ngModel)]="vegetable.vegetablePrice" placeholder="Prix de l'aliment"/>
-    <input type="file" id="image" name="image" [(ngModel)]="vegetable.vegetableImage" required>
-    <button type="button" (click)="updateVegetable()" >Ajouter</button>
+    <div class="titre">Modification du produit</div>
+    <br/>
+    <mat-form-field appearance="fill"><mat-label>Nom de l'aliment</mat-label>
+        <input matInput name="nameVegetable" type="text" [(ngModel)]="vegetable.vegetableName" placeholder="Nom de l'aliment"/>
+    </mat-form-field>
+        <br/>
+    <br/>
+    
+    <mat-form-field appearance="fill"><mat-label>Prix</mat-label>
+    <input matInput name="priceVegetable" type="text" [(ngModel)]="vegetable.vegetablePrice" placeholder="Prix de l'aliment"/>
+    </mat-form-field>
+    <br/> 
+    <br/>  
+    
+    <input type="file" id="image" name="image" [(ngModel)]="vegetable.vegetableImage" required style="margin-left: 10%;">
+    <br/> 
+    <br/> 
+    
+    <button type="button" (click)="updateVegetable()" mat-raised-button>Ajouter</button>
 </form>
+</div>
