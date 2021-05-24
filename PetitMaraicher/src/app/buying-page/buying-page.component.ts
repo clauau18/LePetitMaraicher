@@ -28,8 +28,6 @@ export class BuyingPageComponent implements OnInit {
     this.vegetablesService.getVegetables().subscribe(
       (vegetables:any)=>{
         this.vegetables = vegetables;
-        console.log(vegetables);
-        console.log(this.vegetables)
       },
       (error: any)=> {
         console.log("Error in getVegetables ")

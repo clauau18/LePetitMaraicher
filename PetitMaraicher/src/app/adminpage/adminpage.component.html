@@ -4,10 +4,9 @@
         <div class="adminControl"> 
             <h3>Ajouter ici les produits</h3>
             <form class="example-form">
-                <mat-form-field class="example-full-width">
-                    Créer un aliment
-                </mat-form-field>
-
+                
+                
+                    
                     <mat-label>Nom de l'aliment</mat-label>
                     <input matInput name="nameVegetable" type="text" [(ngModel)]="this.nameVegetable" placeholder="Ex : Carotte"/>
 
@@ -23,25 +22,27 @@
                     <br/>
                     <br/>
 
-                    <mat-form-field class="example-full-width">
+                    
                         Créer une utilisateur
-                    </mat-form-field>
+                    
                     <mat-label>Login</mat-label>
-                    <input matInput name="login" type="text" [(ngModel)]="this.nameVegetable" placeholder="Ex : UserXX"/>
+                    <input matInput name="login" type="text" [(ngModel)]="this.login" placeholder="Ex : UserXX"/>
 
                     <mat-label>mot de passe</mat-label>
-                    <input matInput name="password" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : AF4TRFT6y. "/>
+                    <input matInput name="password" type="text" [(ngModel)]="this.password" placeholder="Ex : AF4TRFT6y. "/>
                     <mat-label>codepostal</mat-label>
-                    <input matInput name="codepostal" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : 75013 "/>
+                    <input matInput name="codepostal" type="text" [(ngModel)]="this.codepostal" placeholder="Ex : 75013 "/>
                     <mat-label>ville</mat-label>
-                    <input matInput name="ville" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : Paris"/>
+                    <input matInput name="ville" type="text" [(ngModel)]="this.ville" placeholder="Ex : Paris"/>
                     <mat-label>ville</mat-label>
-                    <input matInput name="adresse" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : 44 rue des matelots"/>
+                    <input matInput name="adresse" type="text" [(ngModel)]="this.adresse" placeholder="Ex : 44 rue des matelots"/>
+                    <mat-label>Fullname</mat-label>
+                    <input matInput name="fullName" type="text" [(ngModel)]="this.fullName" placeholder="Oliver C"/>
                     <br/>
                     
 
-                    <button (click)=this.addVegetable() mat-raised-button color="warn">Ajouter</button>
-
+                    <button (click)=this.addUser() mat-raised-button color="warn">Ajouter</button>
+                
           
               </form>
 
@@ -50,17 +51,8 @@
               
         </div>
     
-        <div class="users">
-            
-            <div class="user" *ngFor="let user of users">
-                <div class="contenu">
-                    <div class="name"> {{user.login}}</div>
-                    <div class="name"> {{user.adress}}</div>
-                </div>
-                
-            </div>
-        </div>
-    <!--      <table>
+        
+         <table>
                 <thead>
                     <tr>
                         <th colspan="2">The table header</th>
@@ -73,7 +65,7 @@
                     </tr>
                 </tbody>
             </table>
--->  
+  
         
 
     </body>

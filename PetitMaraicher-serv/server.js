@@ -41,6 +41,27 @@ app.get('/admin/users', (request, response) => {
    
 });
 
+app.post('/admin/users', (request, response) => {
+
+   let requestUser = request.body;
+   //console.log(request.body);
+
+   let newUser = new User({
+      login: requestUser.login,
+      adresse: requestUser.adresse,
+      codepostal: requestUser.codepostal,
+      ville: requestUser.ville,
+      password: requestUser.password,
+      fullname: requestUser.fullName
+   });
+
+   newUser.save((error, user)=>{
+      if (error) return console.error(err);
+      console.log(user)
+      response.json(user)
+   });
+});
+
 app.get('/buying', (request, response) => {
    Vegetable.find((error, vegetables) => {
       if (error) return console.error(err);
