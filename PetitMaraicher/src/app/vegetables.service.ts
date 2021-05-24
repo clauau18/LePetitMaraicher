@@ -33,8 +33,6 @@ export class VegetablesService {
   }
 
   getVegetable(vegetableId:any):Observable<any> {
-    
-    console.log("vegetable ID de GETVEGETABLE VEGETABLESERVICE : "+vegetableId);
     return this.http.get("http://localhost:3000/buying/"+vegetableId);
   }
 
@@ -44,7 +42,6 @@ export class VegetablesService {
   }
   
   getVegetables():any{
-    console.log("get VegetableS dans vegetable service")
     return this.http.get('http://localhost:3000/buying');
   }
   updateVegetable(vegetable: Vegetable): Observable<any>{

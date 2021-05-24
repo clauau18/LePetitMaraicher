@@ -21,18 +21,16 @@ export class BasketService {
   constructor() {
     this.priceBasket=0;
    }
-
-  addToBasket(vegetable:Vegetable): void {
-    console.log(this.quantity[vegetable.vegetableName])
-    
-    this.priceBasket = this.ConvertToInt(this.priceBasket) + this.ConvertToInt(vegetable.vegetablePrice);
+   // Ajoute au panier
+  addToBasket(vegetable:Vegetable): void {    
+    this.priceBasket = this.ConvertToFloat(this.priceBasket) + this.ConvertToFloat(vegetable.vegetablePrice);
 
     if (this.items.indexOf(vegetable) == -1) {
       this.items.push(vegetable)
       this.quantity[vegetable.vegetableName] = 1   
     }
     else {
-      this.quantity[vegetable.vegetableName] = this.ConvertToInt(this.quantity[vegetable.vegetableName]) + this.ConvertToInt(1)
+      this.quantity[vegetable.vegetableName] = this.ConvertToFloat(this.quantity[vegetable.vegetableName]) + this.ConvertToFloat(1)
     }
     
   }
@@ -40,14 +38,14 @@ export class BasketService {
   removeFromBasket(vegetable:Vegetable): void {
     console.log(this.quantity[vegetable.vegetableName])
     if (this.items.indexOf(vegetable) != -1 && this.quantity[vegetable.vegetableName] != 0) {
-      this.priceBasket = this.ConvertToInt(this.priceBasket) - this.ConvertToInt(vegetable.vegetablePrice);
-      this.quantity[vegetable.vegetableName] =  this.ConvertToInt(this.quantity[vegetable.vegetableName]) - this.ConvertToInt(1)
+      this.priceBasket = this.ConvertToFloat(this.priceBasket) - this.ConvertToFloat(vegetable.vegetablePrice);
+      this.quantity[vegetable.vegetableName] =  this.ConvertToFloat(this.quantity[vegetable.vegetableName]) - this.ConvertToFloat(1)
     }
     
   }
 
-  ConvertToInt(val:any){
-    return parseInt(val);
+  ConvertToFloat(val:any){
+    return parseFloat(parseFloat(val).toFixed(2));
   }
 
   getPrice() {

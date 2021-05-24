@@ -21,8 +21,6 @@ export class AdminService {
   }
 
   getUser(userId:any):Observable<any> {
-    
-    console.log("USERID : "+userId);
     return this.http.get("http://localhost:3000/admin/users/"+userId);
   }
 
