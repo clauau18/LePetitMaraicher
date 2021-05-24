@@ -1,18 +1,19 @@
 <div class="vegetable">
-    
-    <img src="fraise.jpg" alt="Barquette de fraises">
+    <div class="contenu"> 
+        
+        <img src="fraise.jpg" alt="Barquette de fraises">
     
         <div class="name"> {{vegetable.vegetableName}}</div>
         <div class="price"> Prix : {{vegetable.vegetablePrice}}</div>
         <div class="quantity"> Quantité : {{vegetable.vegetableQuantity}}</div>
     
-
-    
-    <div class=btns>
-        <button class="edit" routerLink="/vegetable/{{vegetable._id}}"  mat-stroked-button color="primary" >Modifier</button>
-        <button class="addBasket"  (click)="addToBasketEvent()" mat-stroked-button color="primary">Ajouter</button>
-        <button class="removeBasket" (click)="removeFromBasketEvent()" mat-stroked-button color="accent">Retirer</button>
-        <button class="delete" (click)="deleteVegetableEvent()"  mat-stroked-button color="accent">supprimer</button>
+        <div class=btns>
+            <button class="edit" routerLink="/vegetable/{{vegetable._id}}"  mat-stroked-button color="accent" >Modifier</button>
+            <button class="delete" (click)="deleteVegetableEvent()"  mat-stroked-button color="accent">Supprimer</button>
+            <button class="addBasket"  (click)="addToBasketEvent()" mat-stroked-button color="primary">Ajouter</button>
+            <button class="removeBasket" (click)="removeFromBasketEvent()" mat-stroked-button color="primary">Retirer</button>
+            
+        </div>
     </div>
 
 </div>
