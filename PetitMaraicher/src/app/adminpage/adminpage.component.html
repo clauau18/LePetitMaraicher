@@ -44,8 +44,37 @@
 
           
               </form>
+
+
+            
               
         </div>
+    
+        <div class="users">
+            
+            <div class="user" *ngFor="let user of users">
+                <div class="contenu">
+                    <div class="name"> {{user[users].login}}</div>
+                    <div class="name"> {{user.adress}}</div>
+                </div>
+                
+            </div>
+        </div>
+    <!--      <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">The table header</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="users" *ngFor="let user of users">
+                        <td>{{user.login}}</td>
+                        <td>with two columns</td>
+                    </tr>
+                </tbody>
+            </table>
+-->  
+        
 
     </body>
 </html>

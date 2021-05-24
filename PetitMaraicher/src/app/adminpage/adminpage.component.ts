@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
+import { Users } from '../models/users';
 
 import {Vegetable} from '../models/vegetable';
 import { VegetablesService} from '../vegetables.service';
@@ -14,11 +16,29 @@ export class AdminpageComponent implements OnInit {
   quantityVegetable: string = "1 kg";
   vegetables:any;
   image:any;
-  constructor(public vegetablesService: VegetablesService) { }
+
+  
+  constructor(public vegetablesService: VegetablesService, public adminService: AdminService) { }
+  users:any;
 
   ngOnInit(): void {
+    this.getUsers();
   }
 
+  getUsers():void {
+    console.log("YOOOOOOOOOOOOO")
+    this.adminService.getUsers().subscribe(
+      (users:any)=>{
+        this.users = users;
+        console.log(users)
+        console.log(this.users)
+      },
+      (error: any)=> {
+        console.log("Error in getVegetables ")
+      }
+    )
+    
+  }
 
   addVegetable() {
     var vegetable: Vegetable = new Vegetable;
