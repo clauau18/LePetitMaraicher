@@ -1,11 +1,22 @@
-.example-form {
+/*.example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
     margin-left : 5%;
     margin-top: 2%;
+  }*/
+  .adminControl{
+    width:100%;
   }
-  
-  .example-full-width {
-    width: 100%;
+
+  .vegetable{
+    width:50%;
+  }
+
+  .user {
+    width:50%;
+  }
+
+  .mat-form-field {
+    width : 20%;
   }

@@ -17,6 +17,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 let vegetables = [];
+let users = [];
 
 const mongoose = require('mongoose');
 const Vegetable = require('./models/vegetable');
@@ -31,6 +32,36 @@ mongoose.connect('mongodb+srv://myuser:dauphine123@cluster0.ype3m.mongodb.net/my
        console.log("Unable to connect to DB!");
     });
 
+
+app.get('/admin/users', (request, response) => {
+   User.find((error, users) => {
+      if (error) return console.error(err);
+      response.json(users);
+   });
+   
+});
+
+app.post('/admin/users', (request, response) => {
+
+   let requestUser = request.body;
+   //console.log(request.body);
+
+   let newUser = new User({
+      login: requestUser.login,
+      adresse: requestUser.adresse,
+      codepostal: requestUser.codepostal,
+      ville: requestUser.ville,
+      password: requestUser.password,
+      fullname: requestUser.fullName
+   });
+
+   newUser.save((error, user)=>{
+      if (error) return console.error(err);
+      console.log(user)
+      response.json(user)
+   });
+});
+
 app.get('/buying', (request, response) => {
    Vegetable.find((error, vegetables) => {
       if (error) return console.error(err);
@@ -40,10 +71,8 @@ app.get('/buying', (request, response) => {
 });
 
 
-
+// Get 1 utilisateur par son ID
 app.get('/buying/:id', (request, response) =>{
-   
-   console.log("ICI get ONE" + request.params._id);
    Vegetable.findOne( {_id: request.params.id}, (error, vegetable) => {
       if (error) {
          return response.status(404).json({error: error});

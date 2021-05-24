@@ -3,11 +3,9 @@
     <body class="mat-app-background">
         <div class="adminControl"> 
             <h3>Ajouter ici les produits</h3>
-            <form class="example-form">
-                <mat-form-field class="example-full-width">
-                    Créer un aliment
-                </mat-form-field>
-
+            
+            <form>
+                <div class="vegetable">
                     <mat-label>Nom de l'aliment</mat-label>
                     <input matInput name="nameVegetable" type="text" [(ngModel)]="this.nameVegetable" placeholder="Ex : Carotte"/>
 
@@ -23,29 +21,71 @@
                     <br/>
                     <br/>
 
-                    <mat-form-field class="example-full-width">
-                        Créer une utilisateur
-                    </mat-form-field>
-                    <mat-label>Login</mat-label>
-                    <input matInput name="login" type="text" [(ngModel)]="this.nameVegetable" placeholder="Ex : UserXX"/>
+                </div>
 
-                    <mat-label>mot de passe</mat-label>
-                    <input matInput name="password" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : AF4TRFT6y. "/>
-                    <mat-label>codepostal</mat-label>
-                    <input matInput name="codepostal" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : 75013 "/>
-                    <mat-label>ville</mat-label>
-                    <input matInput name="ville" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : Paris"/>
-                    <mat-label>ville</mat-label>
-                    <input matInput name="adresse" type="text" [(ngModel)]="this.priceVegetable" placeholder="Ex : 44 rue des matelots"/>
+                
+                <div class="User">
+
+                    <h3>Créer une utilisateur</h3>
+                    <br/>
+                    <mat-form-field appearance="fill"><mat-label>Fullname</mat-label>
+                    <input matInput name="fullName" type="text" [(ngModel)]="this.fullName" placeholder="Oliver C"/>
+                    </mat-form-field>
+                    <br/>
+
+                    <mat-form-field appearance="fill"><mat-label>Login</mat-label>
+                    <input matInput name="login" type="text" [(ngModel)]="this.login" placeholder="Ex : UserXX"/>
+                    </mat-form-field>
+                    <br/>
+                    
+                    <mat-form-field appearance="fill"><mat-label>mot de passe</mat-label>
+                    <input matInput name="password" type="text" [(ngModel)]="this.password" placeholder="Ex : AF4TRFT6y. "/>
+                    </mat-form-field>
+                    <br/>
+                    
+                    <mat-form-field appearance="fill"><mat-label>Adresse</mat-label>
+                    <input matInput name="adresse" type="text" [(ngModel)]="this.adresse" placeholder="Ex : 44 rue des matelots"/>
+                    </mat-form-field>
+                    <br/>
+                    
+                    <mat-form-field appearance="fill"><mat-label>ville</mat-label>
+                    <input matInput name="ville" type="text" [(ngModel)]="this.ville" placeholder="Ex : Paris"/>
+                    </mat-form-field>
+                    <br/>
+                    
+                    <mat-form-field appearance="fill"><mat-label>Code Postal</mat-label>
+                    <input matInput name="codepostal" type="text" [(ngModel)]="this.codepostal" placeholder="Ex : 75013"/>
+                    </mat-form-field>
                     <br/>
                     
 
-                    <button (click)=this.addVegetable() mat-raised-button color="warn">Ajouter</button>
+                    <button (click)=this.addUser() mat-raised-button color="warn">Ajouter</button>
+            
+                </div>
+            
+            </form>
 
-          
-              </form>
-              
+
+        
+            
         </div>
+
+    
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">The table header</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="users" *ngFor="let user of users">
+                    <td>{{user.login}}</td>
+                    <td>with two columns</td>
+                </tr>
+            </tbody>
+        </table>
+  
+        
 
     </body>
 </html>
