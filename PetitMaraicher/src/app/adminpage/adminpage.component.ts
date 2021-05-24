@@ -105,8 +105,6 @@ export class AdminpageComponent implements OnInit {
       (error) => {
         console.log('Delete error');
       }
-
-      
     )
   }
 }

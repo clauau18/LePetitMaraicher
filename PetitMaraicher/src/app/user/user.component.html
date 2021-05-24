@@ -1,8 +1,35 @@
+<div class="bloc" style="
+width: 400px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 100px;">
 <form>
-        <input name="login" type=text [(ngModel)]="user.login" placeholder="login"/>
-            <input name="adresse" type=text [(ngModel)]="user.adresse" placeholder="adresse"/>
-                <input name="codepostal" type=text [(ngModel)]="user.codepostal" placeholder="codepostal"/>
-                    <input name="ville" type=text [(ngModel)]="user.ville" placeholder="ville"/>
-                        <input name="fullName" type=text [(ngModel)]="user.fullName" placeholder="fullName"/>
-        <button (click)="updateUser()">Sauvegarder</button>
+    <div class="titre">Modification de l'utilisateur</div>
+    <mat-form-field appearance="fill"><mat-label>Login</mat-label>
+    <input matInput name="login" type=text [(ngModel)]="user.login" placeholder="login"/>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field appearance="fill"><mat-label>Nom Complet</mat-label>
+    <input matInput name="fullName" type=text [(ngModel)]="user.fullName" placeholder="fullName"/>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field appearance="fill"><mat-label>Adresse</mat-label>
+    <input matInput name="adresse" type=text [(ngModel)]="user.adresse" placeholder="adresse"/>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field appearance="fill"><mat-label>Code Postal</mat-label>
+    <input matInput name="codepostal" type=text [(ngModel)]="user.codepostal" placeholder="codepostal"/>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field appearance="fill"><mat-label>Ville</mat-label>
+    <input matInput name="ville" type=text [(ngModel)]="user.ville" placeholder="ville"/>
+    </mat-form-field>
+    <br/>
+
+    <button (click)="updateUser()" mat-raised-button>Sauvegarder</button>
 </form>
+</div>
