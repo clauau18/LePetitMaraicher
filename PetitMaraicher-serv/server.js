@@ -41,6 +41,19 @@ app.get('/admin/users', (request, response) => {
    
 });
 
+// Get 1 vegetable par son ID
+app.get('/admin/users/:id', (request, response) =>{
+   console.log("AAAAAAAAAAAAA"+request)
+   console.log("BBBBBBBBBBBB"+response)
+   User.findOne( {_id: request.params.id}, (error, user) => {
+      if (error) {
+         return response.status(404).json({error: error});
+      }
+      response.status(200).json(user);
+   });
+});
+
+// a enlever on l'a fait dans le signup 
 app.post('/admin/users', (request, response) => {
 
    let requestUser = request.body;
@@ -62,6 +75,32 @@ app.post('/admin/users', (request, response) => {
    });
 });
 
+app.put('/admin/users/:id', (request, response) => {
+   let requestUser = request.body;
+
+   let newUser = new User({
+      _id: request.params.id,
+      login: requestUser.login,
+      adresse: requestUser.adresse,
+      codepostal: requestUser.codepostal,
+      ville: requestUser.ville,
+      password: requestUser.password,
+      fullname: requestUser.fullName
+   });
+
+   User.updateOne({_id:request.params.id}, newUser, (error, user) => {
+      if (error) return response.status(400).json({error:error});
+      response.status(201).json(user);
+   });
+});
+
+app.delete('/admin/users/:id', (request, response) =>{
+   User.deleteOne({_id: request.params.id}, (error) => {
+      if (error) return response.status(400).json({error:error});
+      response.status(201).json({msg:'ok'});
+   });
+});
+
 app.get('/buying', (request, response) => {
    Vegetable.find((error, vegetables) => {
       if (error) return console.error(err);
@@ -71,7 +110,7 @@ app.get('/buying', (request, response) => {
 });
 
 
-// Get 1 utilisateur par son ID
+// Get 1 vegetable par son ID
 app.get('/buying/:id', (request, response) =>{
    Vegetable.findOne( {_id: request.params.id}, (error, vegetable) => {
       if (error) {

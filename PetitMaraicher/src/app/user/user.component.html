@@ -1,8 +1,8 @@
 <form>
-        <input type=text [(ngModel)]="user.login" placeholder="login"/>
-            <input type=text [(ngModel)]="user.adresse" placeholder="adresse"/>
-                <input type=text [(ngModel)]="user.codepostal" placeholder="codepostal"/>
-                    <input type=text [(ngModel)]="user.ville" placeholder="ville"/>
-                        <input type=text [(ngModel)]="user.fullName" placeholder="fullName"/>
-        <button (click)="saveUser()">Sauvegarder</button>
+        <input name="login" type=text [(ngModel)]="user.login" placeholder="login"/>
+            <input name="adresse" type=text [(ngModel)]="user.adresse" placeholder="adresse"/>
+                <input name="codepostal" type=text [(ngModel)]="user.codepostal" placeholder="codepostal"/>
+                    <input name="ville" type=text [(ngModel)]="user.ville" placeholder="ville"/>
+                        <input name="fullName" type=text [(ngModel)]="user.fullName" placeholder="fullName"/>
+        <button (click)="updateUser()">Sauvegarder</button>
 </form>

@@ -14,7 +14,6 @@ export class AdminpageComponent implements OnInit {
   nameVegetable!: string;
   priceVegetable!: number;
   quantityVegetable: string = "1 kg";
-  vegetables:any;
   image:any;
 
   login!: string;
@@ -59,8 +58,8 @@ export class AdminpageComponent implements OnInit {
 
 
     this.vegetablesService.addVegetable(vegetable).subscribe(
-      (vegetables:any)=>{
-        this.vegetables.push(vegetable);
+      (users:any)=>{
+        this.users.push(users);
         //this.vegetablesService.vegetables2.push(vegetable);
       },
       (error: any)=> {
@@ -92,8 +91,22 @@ export class AdminpageComponent implements OnInit {
   }
 
   saveUser(user:Users):any {
-    var index = this.vegetables.indexOf(user);
-    this.vegetables.splice(index,1);
-    this.vegetables.push(user);
+    var index = this.users.indexOf(user);
+    this.users.splice(index,1);
+    this.users.push(user);
+  }
+
+  deleteUser(user:Users){
+    this.adminService.deleteUser(user._id).subscribe(
+      () => {
+        const index = this.users.indexOf(user);
+        this.users.splice(index, 1);
+      },
+      (error) => {
+        console.log('Delete error');
+      }
+
+      
+    )
   }
 }

@@ -23,7 +23,15 @@ export class AdminService {
   getUser(userId:any):Observable<any> {
     
     console.log("USERID : "+userId);
-    return this.http.get("http://localhost:3000/buying/"+userId);
+    return this.http.get("http://localhost:3000/admin/users/"+userId);
+  }
+
+  updateUser(user: Users): Observable<any>{
+    return this.http.put('http://localhost:3000/admin/users/' + user._id, user);
+  }
+
+  deleteUser(userId:any) {
+    return this.http.delete("http://localhost:3000/admin/users/"+userId);
   }
 
   saveUser(user:Users):any {
