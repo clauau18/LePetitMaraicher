@@ -12,7 +12,7 @@ import {SignupPageComponent} from './signup-page/signup-page.component';
 import {AdminpageComponent} from './adminpage/adminpage.component';
 import {UserComponent} from './user/user.component'
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'',component:BuyingPageComponent},
   {path:'home',component:HomeComponent},
   {path:'buying',component:BuyingPageComponent},
   {path:'vegetable/:id',component:VegetableComponent},

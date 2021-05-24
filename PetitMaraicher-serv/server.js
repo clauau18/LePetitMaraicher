@@ -125,7 +125,6 @@ app.get('/buying/:id', (request, response) =>{
 app.post('/buying', (request, response) => {
 
    let requestVegetable = request.body;
-   //console.log(request.body);
 
    let newVegetable = new Vegetable({
       vegetableName:  requestVegetable.vegetableName,
@@ -135,7 +134,6 @@ app.post('/buying', (request, response) => {
 
    newVegetable.save((error, vegetable)=>{
       if (error) return console.error(err);
-      console.log(vegetable)
       response.json(vegetable)
    });
 });
