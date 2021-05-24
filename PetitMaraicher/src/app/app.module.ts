@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { NoteBlockComponent } from './note-block/note-block.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { NoteBlockComponent } from './note-block/note-block.component';
     SignupPageComponent,
     PaymentPageComponent,
     AdminpageComponent,
-    NoteBlockComponent
+    NoteBlockComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

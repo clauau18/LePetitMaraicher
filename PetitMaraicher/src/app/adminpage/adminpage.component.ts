@@ -90,4 +90,10 @@ export class AdminpageComponent implements OnInit {
       }
     )
   }
+
+  saveUser(user:Users):any {
+    var index = this.vegetables.indexOf(user);
+    this.vegetables.splice(index,1);
+    this.vegetables.push(user);
+  }
 }
