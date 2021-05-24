@@ -45,7 +45,7 @@ export class BasketService {
   }
 
   ConvertToFloat(val:any){
-    return parseFloat(val);
+    return parseFloat(parseFloat(val).toFixed(2));
   }
 
   getPrice() {
