@@ -6,8 +6,8 @@ export class Users {
     codepostal!: string;
     ville!: string;
     fullName!: string;
-    password!: string;
-    type!: boolean;
+    password?: string;
+    type?: boolean;
 
 
 }
