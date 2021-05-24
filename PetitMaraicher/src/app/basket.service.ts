@@ -12,15 +12,15 @@ export interface IHash {
   providedIn: 'root'
 })
 export class BasketService {
-  priceBasket: number = 0;
+  priceBasket: number;
   vegetable: Vegetable = new Vegetable;
   quantity:IHash = {};
 
   items:Array<Vegetable> =  new Array<Vegetable>()
 
   constructor() {
+    this.priceBasket=0;
    }
-
 
   addToBasket(vegetable:Vegetable): void {
     console.log(this.quantity[vegetable.vegetableName])
@@ -37,19 +37,6 @@ export class BasketService {
     
   }
 
-  displayFruitsInBasket(vegetableId:number): [String,number, number] {
-    for(let i=0; i< this.items.length;i++) {
-     
-      return [this.items[i]['vegetableName'], this.items[i]['vegetablePrice'], this.quantity[this.items[i]['vegetableName']] ]
-        
-    }
-    return null as any;
-  }
-
-
-
-
-
   removeFromBasket(vegetable:Vegetable): void {
     console.log(this.quantity[vegetable.vegetableName])
     if (this.items.indexOf(vegetable) != -1 && this.quantity[vegetable.vegetableName] != 0) {
@@ -58,8 +45,6 @@ export class BasketService {
     }
     
   }
-
- 
 
   ConvertToInt(val:any){
     return parseInt(val);
