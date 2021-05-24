@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PaymentService } from '../payment.service';
 
 @Component({
   selector: 'app-payment-page',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentPageComponent implements OnInit {
 
-  constructor() { }
+  cnom:any = "";
+  cnum:any = "";
+  cmois:any="";
+  cvv:any="";
+  cannee:any="";
+
+  constructor(public paymentservice: PaymentService) { 
+    
+  }
 
   ngOnInit(): void {
   }
+
+  submit():any{
+    this.paymentservice.addpayment(this.cnom, this.cnum, this.cmois, this.cannee, this.cvv).subscribe(
+      (userInfo:any)=>{
+        this.paymentservice = userInfo;
+      },
+      (error)=>{
+        console.log("error",error)
+      }
+    )
+  }
+
 
 }
