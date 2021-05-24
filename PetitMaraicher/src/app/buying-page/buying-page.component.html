@@ -38,8 +38,13 @@
                    
                     </div>
                     
+<<<<<<< HEAD
                     <div class= "btns">
                         <button class="addBasket" routerLink="/vegetable/{{vegetable._id}}" mat-stroked-button color="primary">Modifier</button>
+=======
+                    <div class=btns>
+                        <button class="edit" routerLink="/vegetable/{{vegetable._id}}" mat-stroked-button color="primary">Modifier</button>
+>>>>>>> 2e00b424acfedccfe2816372fd2cd4cdbf797c68
                         <button class="addBasket" (click)="basketService.addToBasket(vegetable)" mat-stroked-button color="primary">Ajouter</button>
                         <button class="removeBasket" (click)="basketService.removeFromBasket(vegetable)"mat-stroked-button color="primary">Retirer</button>
                         <button class="delete" (click)="deleteVegetable(vegetable)"mat-stroked-button color="primary">supprimer</button>
