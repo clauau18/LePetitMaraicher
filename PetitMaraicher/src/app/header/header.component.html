@@ -18,9 +18,9 @@
     <div class="right-menu">
         
         <span *ngIf="authService.connectedUser">{{authService.connectedUser.fullName}}</span>
-        <button *ngIf="!authService.connectedUser" routerLink="/connexion" routerLinkActive="active-link" mat-raised-button>Login</button>
-        <button *ngIf="!authService.connectedUser" routerLink="/signup" routerLinkActive="active-link" mat-raised-button>Register</button>
-        <button *ngIf="authService.connectedUser" routerLinkActive="active-link"  mat-raised-button (click)="logout()">Logout</button>
+        <button *ngIf="!authService.connectedUser" routerLink="/connexion" routerLinkActive="active-link" mat-raised-button>Connexion</button>
+        <button *ngIf="!authService.connectedUser" routerLink="/signup" routerLinkActive="active-link" mat-raised-button>Inscription</button>
+        <button *ngIf="authService.connectedUser" routerLinkActive="active-link"  mat-raised-button (click)="logout()">Déconnexion</button>
         <button routerLink="/basket" routerLinkActive="active-link" routerLinkActive="active-link" class="element" mat-raised-button><i class="fa fa-shopping-cart" aria-hidden="true"></i>   Panier : <label class="basketPrice">{{this.basketService.priceBasket}}</label> € </button>
         
     </div>
