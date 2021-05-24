@@ -18,8 +18,6 @@ export class UserComponent implements OnInit {
     this._id = this.route.snapshot.paramMap.get('id');
     this.user = { login: '', adresse: '', codepostal : "", ville: "", fullName:""};
 
-    console.log('id from comp' + this.user);
-    console.log("this.egtable" + this.adminService.getUser(this._id))
     this.adminService.getUser(this._id).subscribe(
         (user: Users) => {
           this.user = user;

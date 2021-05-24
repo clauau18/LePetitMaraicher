@@ -33,12 +33,9 @@ export class AdminpageComponent implements OnInit {
   }
 
   getUsers(){
-    console.log("YOOOOOOOOOOOOO")
     this.adminService.getUsers().subscribe(
       (users:Array<Users>)=>{
         this.users = users;
-        console.log(users)
-        console.log(this.users)
       },
       (error: any)=> {
         console.log("Error in gget Users  ")
@@ -67,28 +64,28 @@ export class AdminpageComponent implements OnInit {
       }
     )
   }
-
-  addUser() {
-    var user: Users = new Users;
+  // Le AddUser est déja fait dans le signup
+  // addUser() {
+  //   var user: Users = new Users;
     
-    user._id = Math.random();
-    user.login = this.login;
-    user.adresse = this.adresse;
-    user.codepostal = this.codepostal;
-    user.password = this.password;
-    user.fullName = this.fullName
+  //   user._id = Math.random();
+  //   user.login = this.login;
+  //   user.adresse = this.adresse;
+  //   user.codepostal = this.codepostal;
+  //   user.password = this.password;
+  //   user.fullName = this.fullName
 
 
-    this.adminService.addUser(user).subscribe(
-      (users:any)=>{
-        this.users.push(user);
-        //this.vegetablesService.vegetables2.push(vegetable);
-      },
-      (error: any)=> {
-        console.log("Error in addUser ")
-      }
-    )
-  }
+  //   this.adminService.addUser(user).subscribe(
+  //     (users:any)=>{
+  //       this.users.push(user);
+  //       //this.vegetablesService.vegetables2.push(vegetable);
+  //     },
+  //     (error: any)=> {
+  //       console.log("Error in addUser ")
+  //     }
+  //   )
+  // }
 
   saveUser(user:Users):any {
     var index = this.users.indexOf(user);
@@ -105,6 +102,8 @@ export class AdminpageComponent implements OnInit {
       (error) => {
         console.log('Delete error');
       }
+
+      
     )
   }
 }

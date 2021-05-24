@@ -16,7 +16,6 @@ export class AuthService {
     }
 
     logout():Observable<any>{
-        console.log("ddd")
         this.connectedUser = false;
         return this.http.get('http://localhost:3000/logout', {withCredentials: true});
     }
@@ -29,8 +28,6 @@ export class AuthService {
         this.http.post("http://localhost:3000/islogged", {withCredentials : true}).subscribe (
             (connectedUser)=> {
                 this.connectedUser = connectedUser;
-                console.log(this.connectedUser)
-                console.log("connected")
             },
             (error) => {
                 console.log("not connected")

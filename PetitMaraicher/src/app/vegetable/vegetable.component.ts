@@ -18,8 +18,6 @@ export class VegetableComponent implements OnInit {
     this.vegetableId = this.route.snapshot.paramMap.get('id');
     this.vegetable = { vegetableName: '', vegetablePrice: 0, vegetableQuantity : "1 kg"};
 
-    console.log('id from comp' + this.vegetable);
-    console.log("this.egtable" + this.vegetablesService.getVegetable(this.vegetableId))
     this.vegetablesService.getVegetable(this.vegetableId).subscribe(
         (vegetable: Vegetable) => {
           this.vegetable = vegetable;
