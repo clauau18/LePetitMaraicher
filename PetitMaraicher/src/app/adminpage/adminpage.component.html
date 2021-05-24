@@ -98,8 +98,8 @@
                         <td>{{user.ville}}</td>
                         <td>{{user.codepostal}}</td>
                         <td>{{user.type}}</td>
-                        <td><button  routerLink="/user/{{user._id}}">Modifier</button>
-                            <button  class="delete" (click)="deleteUser(user)" >Supprimer  </button></td>
+                        <td><button  routerLink="/user/{{user._id}}"mat-raised-button style="margin: 5px;">Modifier</button>
+                            <button  class="delete" (click)="deleteUser(user)" mat-raised-button>Supprimer  </button></td>
                     </tr>
                 </tbody>
             </table>
