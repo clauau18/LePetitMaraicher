@@ -39,5 +39,19 @@ export class BuyingPageComponent implements OnInit {
     
   }
 
+  deleteVegetable(vegetable:Vegetable){
+    this.vegetablesService.deleteVegetable(vegetable._id).subscribe(
+      () => {
+        const index = this.vegetables.indexOf(vegetable);
+        this.vegetables.splice(index, 1);
+      },
+      (error) => {
+        console.log('Delete error');
+      }
+
+      
+    )
+  }
+
 
 }

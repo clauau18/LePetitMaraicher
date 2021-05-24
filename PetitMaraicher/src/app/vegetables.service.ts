@@ -19,9 +19,8 @@ export class VegetablesService {
   
  
 
-  deleteVegetable(vegetable:Vegetable): void {
-    var index = this.vegetables.indexOf(vegetable);
-    this.vegetables.splice(index,1);
+  deleteVegetable(vegetableId:any) {
+    return this.http.delete("http://localhost:3000/buying/"+vegetableId);
   }
 
   getVegetable2(vegetableId:number): Vegetable {

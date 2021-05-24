@@ -22,6 +22,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { NoteBlockComponent } from './note-block/note-block.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MatSliderModule } from '@angular/material/slider';
     BasketPageComponent,
     SignupPageComponent,
     PaymentPageComponent,
-    AdminpageComponent
+    AdminpageComponent,
+    NoteBlockComponent
   ],
   imports: [
     BrowserModule,

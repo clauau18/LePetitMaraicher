@@ -16,8 +16,7 @@ export class VegetableComponent implements OnInit {
 
   ngOnInit(): void {
     this.vegetableId = this.route.snapshot.paramMap.get('id');
-    console.log('id from comp' + this.route.snapshot.paramMap.get('id'));
-    this.vegetable = { vegetableName: '', vegetablePrice: 0, vegetableQuantity : "1 kg", vegetableImage:""};
+    this.vegetable = { vegetableName: '', vegetablePrice: 0, vegetableQuantity : "1 kg"};
 
     console.log('id from comp' + this.vegetable);
     console.log("this.egtable" + this.vegetablesService.getVegetable(this.vegetableId))

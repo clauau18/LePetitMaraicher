@@ -42,7 +42,8 @@ app.get('/buying', (request, response) => {
 
 
 app.get('/buying/:vegetable', (request, response) =>{
-   console.log("ICI get ONE" +request.params.id);
+   
+   console.log("ICI get ONE" + request.params._id);
    Vegetable.findOne( {_id: request.params.id}, (error, vegetable) => {
       if (error) {
          return response.status(404).json({error: error});
@@ -56,6 +57,7 @@ app.get('/buying/:vegetable', (request, response) =>{
 app.post('/buying', (request, response) => {
 
    let requestVegetable = request.body;
+   //console.log(request.body);
 
    let newVegetable = new Vegetable({
       vegetableName:  requestVegetable.vegetableName,
@@ -70,8 +72,28 @@ app.post('/buying', (request, response) => {
    });
 });
 
-app.put('/buying', (request, response) => {
-   response.json({data:"PUT Modif vegetable"})
+app.put('/buying:id', (request, response) => {
+   let requestVegetable = request.body;
+
+   let newVegetable = new Vegetable({
+      _id: request.params.id,
+      vegetableName:  requestVegetable.vegetableName,
+      vegetablePrice: requestVegetable.vegetablePrice,
+      vegetableQuantity: requestVegetable.vegetableQuantity
+   });
+
+   Vegetable.updateOne({_id:request.params.id}, newVegetable, (error, vegetable) => {
+      if (error) return response.status(400).json({error:error});
+      response.status(201).json(vegetable);
+   });
+});
+
+
+app.delete('/buying/:id', (request, response) =>{
+   Vegetable.deleteOne({_id: request.params.id}, (error) => {
+      if (error) return response.status(400).json({error:error});
+      response.status(201).json({msg:'ok'});
+   });
 });
 
 
@@ -193,13 +215,7 @@ app.put('/notes/:id', (request, response) =>{
    });
 });
 
-//DELETE /notes/:id
-app.delete('/notes/:id', (request, response) =>{
-   Note.deleteOne({_id: request.params.id}, (error) => {
-      if (error) return response.status(400).json({error:error});
-      response.status(201).json({msg:'ok'});
-   });
-});
+
 
 
 

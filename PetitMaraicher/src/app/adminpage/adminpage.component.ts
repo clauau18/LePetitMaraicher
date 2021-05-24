@@ -27,6 +27,7 @@ export class AdminpageComponent implements OnInit {
     vegetable.vegetableName = this.nameVegetable;
     vegetable.vegetablePrice = this.priceVegetable;
     vegetable.vegetableQuantity = this.quantityVegetable;
+    vegetable.vegetableImage = this.image;
 
 
     this.vegetablesService.addVegetable(vegetable).subscribe(
