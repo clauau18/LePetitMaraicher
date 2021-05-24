@@ -36,7 +36,7 @@ mongoose.connect('mongodb+srv://myuser:dauphine123@cluster0.ype3m.mongodb.net/my
 app.get('/admin/users', (request, response) => {
    User.find((error, users) => {
       if (error) return console.error(err);
-      response.json({users});
+      response.json(users);
    });
    
 });

@@ -19,16 +19,16 @@ export class AdminpageComponent implements OnInit {
 
   
   constructor(public vegetablesService: VegetablesService, public adminService: AdminService) { }
-  users:any;
+  users!:any;
 
   ngOnInit(): void {
     this.getUsers();
   }
 
-  getUsers():void {
+  getUsers(){
     console.log("YOOOOOOOOOOOOO")
     this.adminService.getUsers().subscribe(
-      (users:any)=>{
+      (users:Array<Users>)=>{
         this.users = users;
         console.log(users)
         console.log(this.users)
