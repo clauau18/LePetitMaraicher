@@ -21,6 +21,7 @@ export class AdminService {
   }
 
   getUser(userId:any):Observable<any> {
+
     return this.http.get("http://localhost:3000/admin/users/"+userId);
   }
 
